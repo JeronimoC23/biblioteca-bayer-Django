@@ -1,0 +1,242 @@
+{% extends 'mainapp/layout.html' %}
+{% load static %}
+{% block title%}
+    {{title}}
+{% endblock %}
+
+{% block content %}
+<!-- FLEXSLIDER
+    ================================================== -->
+
+<div class="flexslider">
+          <ul class="slides">
+            <li class="slide-one">
+            <div class="flexslider-caption">
+<h3 class="carousel-title">NUESTRO NOMBRE</h3>
+          <h1 class="carousel-title">¿QUIEN FUE OSVALDO BAYER?</h1>
+          <p><a class="btn btn-giant btn-primary" href="charity-donation.html" role="button">Leer mas &rarr;</a></p>
+          </div>
+  	    		</li>
+  	    		<li class="slide-two">
+                 <div class="flexslider-caption">
+ <h2 class="carousel-title">ARCHIVOS DEL SUR</h2>
+          <p class="lead">Receive the unceasing wave after wave, after wave, after wave of Grace God has for you.</p>
+          <p><a class="btn btn-lg btn-primary" href="http://archivosdelsur.fiqus.coop/" role="button" target="blank">Learn more &rarr;</a></p>
+          </div>
+  	    		</li>
+  	    		<li class="slide-three">
+                 <div class="flexslider-caption">
+<h2 class="carousel-title">FERIA DEL LIBRO</h2>
+          <p class="lead">For God did not send his Son into the world to condemn the world, but to save the world through him. <em>John 3:17</em></p>
+          <p><a class="btn btn-lg btn-primary" href="image-gallery.html" role="button">Browse gallery &rarr;</a></p>
+          </div>
+  	    		</li>
+          </ul>
+        </div>
+ 
+<!-- // END FlexSlider --> 
+
+<!--CATALOG-->
+
+<div class="highlight-bg has-margin-bottom">
+  <div class="container event-cta">
+    <div class="ec-txt"> <span>CATALOGO VIRTUAL</span>
+      <p>Nuestro libros y disponibilidades ingresa aqui</p>
+    </div>
+    <a class="btn btn-lg btn-primary" href="event-single.html" role="button">CATALOGO VIRTUAL →</a> </div>
+</div>
+
+<!-- // CATALOG --> 
+
+<!--SUBCOMISIONES-->
+<div class="container">
+  <div class="section-title">
+    <h4> SUBCOMISIONES </h4>
+  </div>
+  <div class="row feature-block">
+    <div class="col-md-3 col-sm-6 has-margin-bottom"> <img class="img-responsive" src="{%static 'assets/images/CINE.jpg'%} "alt="subcomision">
+      <h5>CINECLUB</h5>
+      <p>{% lorem 30 w random  %} </p>
+      <p><a href="ministry.html" role="button">MAS INFO →</a></p>
+    </div>
+    <!-- /.col-md-3 -->
+    <div class="col-md-3 col-sm-6 has-margin-bottom"> <img class="img-responsive" src="{%static 'assets/images/miniarchivo.jpg'%}" alt="subcomision">
+      <h5>ARCHIVOS DEL SUR</h5>
+      <p>{% lorem 20 w random  %}</p>
+      <p><a href="ministry.html" role="button">MAS INFO →</a></p>
+    </div>
+    <!-- /.col-md-3 -->
+    <div class="col-md-3 col-sm-8 col-sm-offset-2 col-md-offset-0 center-this has-margin-bottom"> <img class="img-responsive" src="{%static 'assets/images/aquabosque.jpg'%}" alt="subcomision">
+      <h5>AGUABOSQUE</h5>
+      <p>{% lorem 40 w random  %}</p>
+      <p><a href="ministry.html" role="button">MAS INFO →</a></p>
+    </div>
+    <!-- /.col-md-3 --> 
+    <div class="col-md-3 col-sm-8 col-sm-offset-2 col-md-offset-0 center-this has-margin-bottom"> <img class="img-responsive" src="{%static 'assets/images/cocomanija.jpeg'%} " alt="subcomision">
+      <h5>SOCIAL - COCOMANIJA</h5>
+      <p>{% lorem 18 w random  %}</p>
+      <p><a href="ministry.html" role="button">MAS INFO →</a></p>
+    </div>
+  </div>
+</div>
+<!-- // SUBCOMISIONES --> 
+
+<!--EVENT LISTS-->
+<div class="highlight-bg has-margin-bottom">
+  <div class="container event-list">
+    <div class="section-title">
+      <h4> EVENTOS &amp; ACTIVIDADES </h4>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="owl-carousel">
+          {% comment %} <div class="el-block item">
+            <h4> JULY 16 </h4>
+            <p class="el-head">Weekly meeting &amp; prayer</p>
+            <span>Monday 07:00 AM</span>
+            <p class="el-cta"><a class="btn btn-primary" href="event-single.html" role="button">Details &rarr;</a></p>
+          </div> {% endcomment %}
+          <div class="el-block item">
+            <h4> JUL 30 </h4>
+            <p class="el-head">Show me your faith</p>
+            <span>Thursday 02:00 PM</span>
+            <p class="el-cta"><a class="btn btn-primary" href="event-single.html" role="button">Details &rarr;</a></p>
+          </div>
+          <div class="el-block item">
+            <h4> JUL 29 </h4>
+            <p class="el-head">Show me your faith</p>
+            <span>Thursday 02:00 PM</span>
+            <p class="el-cta"><a class="btn btn-primary" href="event-single.html" role="button">Details &rarr;</a></p>
+          </div>
+          <div class="el-block item">
+            <h4> SEP 19 </h4>
+            <p class="el-head">Perseravance of the saints</p>
+            <span>Saturday 10:00 AM</span>
+            <p class="el-cta"><a class="btn btn-primary" href="event-single.html" role="button">Details &rarr;</a></p>
+          </div>
+          <div class="el-block item">
+            <h4> OCT 14 </h4>
+            <p class="el-head">God's irresistable grace</p>
+            <span>Sunday 11:00 AM</span>
+            <p class="el-cta"><a class="btn btn-primary" href="event-single.html" role="button">Details &rarr;</a></p>
+          </div>
+          <div class="el-block item">
+            <h4> JULY 16 </h4>
+            <p class="el-head">Weekly meeting &amp; prayer</p>
+            <span>Monday 07:00 AM</span>
+            <p class="el-cta"><a class="btn btn-primary" href="event-single.html" role="button">Details &rarr;</a></p>
+          </div>
+          <div class="el-block item">
+            <h4> JUL 29 </h4>
+            <p class="el-head">Show me your faith</p>
+            <span>Thursday 02:00 PM</span>
+            <p class="el-cta"><a class="btn btn-primary" href="event-single.html" role="button">Details &rarr;</a></p>
+          </div>
+          <div class="el-block item">
+            <h4> SEP 19 </h4>
+            <p class="el-head">Perseravance of the saints</p>
+            <span>Saturday 10:00 AM</span>
+            <p class="el-cta"><a class="btn btn-primary" href="event-single.html" role="button">Details &rarr;</a></p>
+          </div>
+          <div class="el-block item">
+            <h4> OCT 14 </h4>
+            <p class="el-head">God's irresistable grace</p>
+            <span>Sunday 11:00 AM</span>
+            <p class="el-cta"><a class="btn btn-primary" href="event-single.html" role="button">Details &rarr;</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- // END EVENT LISTS --> 
+
+<!-- BLOG LIST / LATEST SERMONS -->
+<div class="container has-margin-bottom">
+  <div class="row">
+    <div class="col-md-12 has-margin-bottom">
+      <div class="section-title">
+        <h4> LITERATURA - BLOG </h4>
+      </div>
+      
+      <!--Blog list-->
+      
+       <div class="row has-margin-bottom">
+        <div class="col-md-4 col-sm-4"> <img class="img-responsive center-block" src="images/blog-thumb-1.jpg" alt="bulletin blog"> </div>
+        <div class="col-md-8 col-sm-8 bulletin">
+          <h4 class="media-heading">Perseverance of the Saints </h4>
+          <p>on 17th June 2014 by <a href="#" class="link-reverse">Vincent John</a></p>
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam. Lorem ipsum dolor sit amet...</p>
+          <a class="btn btn-primary" href="blog-single.html" role="button">Read Article →</a> </div>
+      </div> 
+      
+    
+
+      <!--Blog list-->
+      
+      <div class="row">
+        <div class="col-md-4 col-sm-4"> <img class="img-responsive center-block" src="images/blog-thumb-2.jpg" alt="bulletin blog"> </div>
+        <div class="col-md-8 col-sm-8 bulletin">
+          <h4 class="media-heading">Lord is Sufficient for all of our needs </h4>
+          <p>on 17th June 2014 by <a href="#" class="link-reverse">Jose Mathew</a></p>
+          <p class="media-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam. Lorem ipsum dolor sit amet...</p>
+          <a class="btn btn-primary" href="blog-single.html" role="button">Read Article →</a> </div>
+      </div>
+    </div>
+    <!--// col md 9--> 
+    
+    <!--Latest Sermons-->
+    <div class="col-md-3">
+      <div class="well hidden">
+    
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END BLOG LIST --> 
+
+<!-- CITAS -->
+<div class="highlight-bg has-margin-bottom">
+  <div class="container event-list">
+    <div class="section-title">
+      <h4> CITAS </h4>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="owl-carousel2">
+          <div class="item">
+            <blockquote class="blockquote-centered"> En democracia, la autocrítica no significa dar un paso atrás sino uno adelante. <small>Osvaldo Bayer </small> </blockquote>
+          </div>
+          <div class="item">
+            <blockquote class="blockquote-centered">Sostengo, como eslogan, que mientras haya miseria no hay democracia <small>Osvaldo Bayer</small> </blockquote>
+          </div>
+          <div class="item">
+            <blockquote class="blockquote-centered">Hay que esclarecer nuestro pasado para que nunca se repita<small>Osvaldo Bayer</small> </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- // END CITAS --> 
+
+<!--OUR GALLERY-->
+<div class="container has-margin-bottom">
+  <div class="section-title">
+    <h4> OUR GALLERY </h4>
+  </div>
+  <div class="img-gallery row">
+    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="#" data-fancybox-group="gallery" title="image gallery"> <img src="{%static 'assets/images/miniarchivo.jpg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> </a> </div>
+    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="#" data-fancybox-group="gallery" title="image gallery"> <img src="{%static 'assets/images/cocomanija.jpeg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> </a> </div>
+    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="#" data-fancybox-group="gallery" title="image gallery"> <img src="{%static 'assets/images/miniarchivo.jpg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> </a> </div>
+    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="#" data-fancybox-group="gallery" title="image gallery"> <img src="{%static 'assets/images/aquabosque.jpg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> </a> </div>
+    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="#" data-fancybox-group="gallery" title="image gallery"> <img src="{%static 'assets/images/CINE.jpg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> </a> </div>
+    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="#" data-fancybox-group="gallery" title="image gallery"> <img src="{%static 'assets/images/miniarchivo.jpg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> </a> </div>
+    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="#" data-fancybox-group="gallery" title="image gallery"> <img src="{%static 'assets/images/cocomanija.jpeg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> </a> </div>
+    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="#" data-fancybox-group="gallery" title="image gallery"> <img src="{%static 'assets/images/CINE.jpg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> </a> </div>
+  </div>
+</div>
+<!--// END OUR GALLERY --> 
+
+{% endblock %}
+

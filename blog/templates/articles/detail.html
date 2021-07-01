@@ -1,0 +1,20 @@
+{% extends 'mainapp/layout.html' %}
+
+{% block title%}
+    {{article.title}}
+{% endblock %}
+
+{% block content%}
+<h1 class="title">{{article.title}}</h1>
+<span class="date"> {{article.created_at}}</span>
+{% if article.image != 'null' and article.image.url|length >= 1%}
+    <div class="image">
+        <img src="{{article.image.url}}"/>
+    </div>
+
+{%endif%}
+<p class="content"> {{article.content|safe}} </p>
+<p> 
+    {{article.content|safe}}
+</p>
+{% endblock %}
