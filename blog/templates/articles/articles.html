@@ -9,28 +9,7 @@
                 <h4 class="media-heading"><a href="{%url 'article' article.id%}">{{article.title}} </a> </h4>
                 <p> {{article.created_at}} <a href="#" class="link-reverse">{{article.user.first_name}} {{article.user.last_name}}</a></p>
                 <p class="media-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam. Lorem ipsum dolor sit amet...</p>
-                <a class="btn btn-primary" href="blog-single.html" role="button">Leer articulo →</a> </div>
+                <a class="btn btn-primary"  href="{%url 'article' article.id%}" role="button">Leer articulo →</a> </div>
                 </div>
-{% comment %}    
-  <article class="article-item">   
-                <div class="data">
-                    <h2> 
-                        <a href="{%url 'article' article.id%}">{{article.title}} </a>
-                     </h2>
-                    <p>
-                        {%for category in article.categories.all %}
-                        
-                            <a href="{% url 'category' category.id %}"> {{category.name}}<a>
-                            {%if forloop.counter < article.categories.all|length%}
-                                -
-                            {%endif%}
-                        {%endfor%}
-                    </p>
-                    <span class="date"> {{article.created_at}}
-                    | 
-                    Creado por {{article.user.first_name}} {{article.user.last_name}}
-                    </span>
-                </div>
-                <div class="clearfix"></div>
-            </article> {% endcomment %}
+
 {% endfor %}

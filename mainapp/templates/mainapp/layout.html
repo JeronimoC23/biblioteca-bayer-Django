@@ -38,7 +38,7 @@
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a class="navbar-brand" href="index.html"> <img src="images/church-logo.png" alt="church logo" class="img-responsive"></a> </div>
+      <a class="navbar-brand" href={%url 'index'%}> <img src="images/church-logo.png" alt="church logo" class="img-responsive"></a> </div>
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
        
@@ -48,9 +48,6 @@
             <li>
                 <a href={%url 'about'%}> Sobre Nosotros </a>
             </li>
-           
-           
-           
             <li>
                 <a href={%url 'list'%}>Literatura </a>
                 <ul>
@@ -70,14 +67,10 @@
     </div>
   </div>
 </div>
-   
-
- 
-
     
     <div id="content">
         <div class="box">
-            <!--Aca adentro va contenido que viene de las templates-->
+            <!--Templates content-->
             {% block content %}
             
     
