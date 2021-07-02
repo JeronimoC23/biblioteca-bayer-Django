@@ -18,8 +18,8 @@ class Category(models.Model):
     
 class Article(models.Model):
 
-    title= models.CharField(max_length=100, verbose_name="Title")
-    content=RichTextField(verbose_name="Content")
+    title= models.CharField(max_length=100, verbose_name="Titulo")
+    content=RichTextField(verbose_name="Contenido")
     slug=models.CharField(verbose_name="Friendly URL", unique=True, max_length=250)
     public=models.BooleanField(default=False,verbose_name="Public?")
     created_at =models.DateTimeField(auto_now_add=True, verbose_name="Created at")
@@ -34,3 +34,35 @@ class Article(models.Model):
         ordering = ['-created_at']
     def __str__(self):
         return self.title
+
+
+
+class Event(models.Model):
+    
+    title= models.CharField(max_length=100, verbose_name="Titulo")
+    content=RichTextField(verbose_name="Contenido")
+    slug=models.CharField(verbose_name="Friendly URL", unique=True, max_length=250)
+    public=models.BooleanField(default=False,verbose_name="Public?")
+    created_at =models.DateTimeField(auto_now_add=True, verbose_name="Created at")
+    image = models.ImageField(default="null", verbose_name="Image",upload_to="articles")
+    user = models.ForeignKey(User,editable=False, verbose_name="User", on_delete=models.CASCADE)
+    fecha = models.DateField(verbose_name="Fecha del evento")
+
+    class Meta:
+        verbose_name = "Evento"
+        verbose_name_plural = "Eventos"
+        ordering = ['-created_at']
+    def __str__(self):
+        return self.title
+
+class SubCom(models.Model):
+    name = models.CharField(max_length=100, verbose_name="Nombre")
+    description = models.CharField(max_length=255, verbose_name="Descripcion")
+    image = models.ImageField(default="null", verbose_name="Image",upload_to="articles")
+    
+    class Meta:
+        verbose_name = "Subcomision"
+        verbose_name_plural = "Subcomisiones"
+
+    def __str__(self):
+        return self.name
