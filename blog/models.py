@@ -1,6 +1,5 @@
 from django.db import models
 from ckeditor.fields import RichTextField
-from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -26,12 +25,13 @@ class Article(models.Model):
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Updated at")
     image = models.ImageField(default="null", verbose_name="Image",upload_to="articles")
     categories = models.ManyToManyField(Category, verbose_name="Category")
-    user = models.ForeignKey(User,editable=False, verbose_name="User", on_delete=models.CASCADE)
+    author = models.CharField(max_length=50, verbose_name="Autor", default="Equipo Biblioteca Bayer")
     
     class Meta:
         verbose_name = "Article"
         verbose_name_plural = "Articles"
         ordering = ['-created_at']
+        
     def __str__(self):
         return self.title
 
@@ -45,7 +45,7 @@ class Event(models.Model):
     public=models.BooleanField(default=False,verbose_name="Public?")
     created_at =models.DateTimeField(auto_now_add=True, verbose_name="Created at")
     image = models.ImageField(default="null", verbose_name="Image",upload_to="articles")
-    user = models.ForeignKey(User,editable=False, verbose_name="User", on_delete=models.CASCADE)
+    author = models.CharField(max_length=50, verbose_name="Autor", default="Equipo Biblioteca Bayer")
     fecha = models.DateField(verbose_name="Fecha del evento")
 
     class Meta:

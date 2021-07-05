@@ -14,7 +14,7 @@
             <div class="flexslider-caption">
 <h3 class="carousel-title">NUESTRO NOMBRE</h3>
           <h1 class="carousel-title">¿QUIEN FUE OSVALDO BAYER?</h1>
-          <p><a class="btn btn-giant btn-primary" href="charity-donation.html" role="button">Leer mas &rarr;</a></p>
+          <p><a class="btn btn-giant btn-primary" href={%url 'about'%} role="button">Leer mas &rarr;</a></p>
           </div>
   	    		</li>
   	    		<li class="slide-two">
@@ -28,7 +28,7 @@
                  <div class="flexslider-caption">
 <h2 class="carousel-title">FERIA DEL LIBRO</h2>
           <p class="lead">Evento anual de encuentro intercultural e intercolegial de libros <em>Villa La Angostura</em></p>
-          <p><a class="btn btn-lg btn-primary" href="image-gallery.html" role="button">Ver fotos&rarr;</a></p>
+          <p><a class="btn btn-lg btn-primary" href="#gallery" role="button">Ver fotos&rarr;</a></p>
           </div>
   	    		</li>
           </ul>
@@ -43,7 +43,7 @@
     <div class="ec-txt"> <span>CATALOGO VIRTUAL</span>
       <p>Nuestro libros y disponibilidades ingresa aqui</p>
     </div>
-    <a class="btn btn-lg btn-primary" href="event-single.html" role="button">CATALOGO VIRTUAL →</a> </div>
+    <a class="btn btn-lg btn-primary" href="#" role="button">CATALOGO VIRTUAL →</a> </div>
 </div>
 
 <!-- // CATALOG --> 
@@ -82,6 +82,7 @@
 <!-- // SUBCOMISIONES --> 
 
 <!--EVENT LISTS-->
+
 <div class="highlight-bg has-margin-bottom">
   <div class="container event-list">
     <div class="section-title">
@@ -90,65 +91,65 @@
     <div class="row">
       <div class="col-md-12">
         <div class="owl-carousel">
-          {% comment %} <div class="el-block item">
-            <h4> JULY 16 </h4>
-            <p class="el-head">Weekly meeting &amp; prayer</p>
-            <span>Monday 07:00 AM</span>
-            <p class="el-cta"><a class="btn btn-primary" href="event-single.html" role="button">Details &rarr;</a></p>
-          </div> {% endcomment %}
-          <div class="el-block item">
+           
+             {% for event in events %}
+            <div class="el-block item">
+              <h4>{{event.fecha|date:"SHORT_DATE_FORMAT" }} </h4>
+              <p class="el-head">{{event.title}}</p>
+              <span>{{event.author}}</span>
+              <p class="el-cta"><a class="btn btn-primary" href={{event.slug}} role="button">Detalles &rarr;</a></p>
+            </div> 
+            {% endfor %} 
+            {% comment %}
+            <div class="el-block item">
             <h4> JUL 30 </h4>
             <p class="el-head">Show me your faith</p>
             <span>Thursday 02:00 PM</span>
-            <p class="el-cta"><a class="btn btn-primary" href="event-single.html" role="button">Details &rarr;</a></p>
+            <p class="el-cta"><a class="btn btn-primary" href="#" role="button">Details &rarr;</a></p>
           </div>
-          <div class="el-block item">
-            <h4> JUL 29 </h4>
-            <p class="el-head">Show me your faith</p>
-            <span>Thursday 02:00 PM</span>
-            <p class="el-cta"><a class="btn btn-primary" href="event-single.html" role="button">Details &rarr;</a></p>
-          </div>
+          
           <div class="el-block item">
             <h4> SEP 19 </h4>
             <p class="el-head">Perseravance of the saints</p>
             <span>Saturday 10:00 AM</span>
-            <p class="el-cta"><a class="btn btn-primary" href="event-single.html" role="button">Details &rarr;</a></p>
+            <p class="el-cta"><a class="btn btn-primary" href="#" role="button">Details &rarr;</a></p>
           </div>
           <div class="el-block item">
             <h4> OCT 14 </h4>
             <p class="el-head">God's irresistable grace</p>
             <span>Sunday 11:00 AM</span>
-            <p class="el-cta"><a class="btn btn-primary" href="event-single.html" role="button">Details &rarr;</a></p>
+            <p class="el-cta"><a class="btn btn-primary" href="#" role="button">Details &rarr;</a></p>
           </div>
           <div class="el-block item">
             <h4> JULY 16 </h4>
             <p class="el-head">Weekly meeting &amp; prayer</p>
             <span>Monday 07:00 AM</span>
-            <p class="el-cta"><a class="btn btn-primary" href="event-single.html" role="button">Details &rarr;</a></p>
+            <p class="el-cta"><a class="btn btn-primary" href="#" role="button">Details &rarr;</a></p>
           </div>
           <div class="el-block item">
             <h4> JUL 29 </h4>
             <p class="el-head">Show me your faith</p>
             <span>Thursday 02:00 PM</span>
-            <p class="el-cta"><a class="btn btn-primary" href="event-single.html" role="button">Details &rarr;</a></p>
+            <p class="el-cta"><a class="btn btn-primary" href="#" role="button">Details &rarr;</a></p>
           </div>
           <div class="el-block item">
             <h4> SEP 19 </h4>
             <p class="el-head">Perseravance of the saints</p>
             <span>Saturday 10:00 AM</span>
-            <p class="el-cta"><a class="btn btn-primary" href="event-single.html" role="button">Details &rarr;</a></p>
+            <p class="el-cta"><a class="btn btn-primary" href="#" role="button">Details &rarr;</a></p>
           </div>
           <div class="el-block item">
             <h4> OCT 14 </h4>
             <p class="el-head">God's irresistable grace</p>
             <span>Sunday 11:00 AM</span>
-            <p class="el-cta"><a class="btn btn-primary" href="event-single.html" role="button">Details &rarr;</a></p>
+            <p class="el-cta"><a class="btn btn-primary" href="#" role="button">Details &rarr;</a></p>
           </div>
+        {% endcomment %}
         </div>
       </div>
     </div>
   </div>
-</div>
+</div> 
 <!-- // END EVENT LISTS --> 
 
 <!-- BLOG LIST / LATEST SERMONS -->
@@ -156,21 +157,22 @@
   <div class="row">
     <div class="col-md-12 has-margin-bottom">
       <div class="section-title">
-        <h4> LITERATURA - BLOG </h4>
+        <h4> BLOG </h4>
       </div>
       
       <!--Blog list-->
+      {%for article in articles %}
+        <div class="row has-margin-bottom">
+          <div class="col-md-4 col-sm-4"> <img class="img-responsive center-block" src="{{article.image.url}}" alt="bulletin blog"> </div>
+          <div class="col-md-8 col-sm-8 bulletin">
+            <h4 class="media-heading">{{article.title}} </h4>
+            <p>{{article.created_at}}<strong class="link-reverse"> {{article.author}}</strong></p>
+            <p> {{article.content|safe }}</p>
+            <a class="btn btn-primary" href="{%url 'article' article.id%}" role="button">Leer articulo →</a> </div>
+        </div> 
+      {%endfor %}
       
-       <div class="row has-margin-bottom">
-        <div class="col-md-4 col-sm-4"> <img class="img-responsive center-block" src="images/blog-thumb-1.jpg" alt="bulletin blog"> </div>
-        <div class="col-md-8 col-sm-8 bulletin">
-          <h4 class="media-heading">Perseverance of the Saints </h4>
-          <p>on 17th June 2014 by <a href="#" class="link-reverse">Vincent John</a></p>
-          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam. Lorem ipsum dolor sit amet...</p>
-          <a class="btn btn-primary" href="blog-single.html" role="button">Read Article →</a> </div>
-      </div> 
-      
-    
+{% comment %}     
 
       <!--Blog list-->
       
@@ -190,9 +192,10 @@
       <div class="well hidden">
     
       </div>
+      {% endcomment %}
     </div>
   </div>
-</div>
+</div> 
 <!-- END BLOG LIST --> 
 
 <!-- CITAS -->
@@ -221,7 +224,7 @@
 <!-- // END CITAS --> 
 
 <!--OUR GALLERY-->
-<div class="container has-margin-bottom">
+<div class="container has-margin-bottom" id="gallery">
   <div class="section-title">
     <h4> OUR GALLERY </h4>
   </div>
@@ -237,6 +240,7 @@
   </div>
 </div>
 <!--// END OUR GALLERY --> 
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24176.036824061153!2d-71.64676641031777!3d-40.7619234925533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9610bf4307ab8641%3A0xbb27500aec1b7b6!2sBiblioteca%20Popular%20Osvaldo%20Bayer!5e0!3m2!1ses-419!2sar!4v1625488714299!5m2!1ses-419!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" ></iframe>
 
 {% endblock %}
 

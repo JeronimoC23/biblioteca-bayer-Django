@@ -1,8 +1,8 @@
-from blog.models import Article, Category
+from blog.models import Article, Category, Event
 
 def get_articles(request):
 
-    articles = Article.objects.filter(public=True).values_list('id', 'title', 'slug','image','user')
+    articles = Article.objects.filter(public=True).values_list('id', 'title', 'slug','image','author')
     
     return {
         'articles': articles
@@ -17,3 +17,4 @@ def get_categories(request):
         'ids':categories_in_use
 
     }
+

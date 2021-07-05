@@ -8,15 +8,12 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class ArticleAdmin(admin.ModelAdmin):
-    readonly_fields= ('user','created_at','updated_at')
-    search_fields = ('title', 'content', 'user__username', 'categories__name')
-    list_display = ('title', 'user','public', 'created_at')
-    list_filter = ('public', 'user', 'categories__name')
+    readonly_fields= ('author','created_at','updated_at')
+    search_fields = ('title', 'content', 'categories__name')
+    list_display = ('title', 'author','public', 'created_at')
+    list_filter = ('public', 'author', 'categories__name')
 
-    def save_model(self, request, obj, form, change):
-        if not obj.user_id:
-            obj.user_id= request.user.id
-        obj.save() 
+   
 
 class EventAdmin(admin.ModelAdmin):
     readonly_fields= ('created_at',)
