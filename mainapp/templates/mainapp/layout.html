@@ -24,7 +24,7 @@
 <![endif]-->
 
 <!-- Favicons -->
-<link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}">
+<link rel="shortcut icon" href="{% static 'assets/images/letra-b.png' %}">
 
 <!-- Custom Google Font : Montserrat and Droid Serif -->
 
@@ -51,15 +51,17 @@
             <li>
                 <a href={%url 'list'%}>Blog</a>
             </li>
-            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Subcomisiones<span class="caret"></span></a>
-              <ul class="dropdown-menu dropdown-menu-left" role="menu">
-                {%for subcom in subcomisiones%}
-                        <li>
-                            <a href={%url 'subcomision' subcom.0 %}> {{subcom.1}}</a>
-                        </li>
-                {% endfor %}
-              </ul>
-            </li>
+            {% if subcomisiones.length != 0%}
+              <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Subcomisiones<span class="caret"></span></a>
+                <ul class="dropdown-menu dropdown-menu-left" role="menu">
+                  {%for subcom in subcomisiones%}
+                          <li>
+                              <a href={%url 'subcomision' subcom.0 %}> {{subcom.1}}</a>
+                          </li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {%endif%}
             <li>
                 <a href="#contact"> Contacto </a>
             </li>
