@@ -92,59 +92,14 @@
       <div class="col-md-12">
         <div class="owl-carousel">
            
-             {% for event in events %}
+            {% for event in events %}
             <div class="el-block item">
               <h4>{{event.fecha|date:"SHORT_DATE_FORMAT" }} </h4>
               <p class="el-head">{{event.title}}</p>
               <span>{{event.author}}</span>
               <p class="el-cta"><a class="btn btn-primary" href={{event.slug}} role="button">Detalles &rarr;</a></p>
             </div> 
-            {% endfor %} 
-            {% comment %}
-            <div class="el-block item">
-            <h4> JUL 30 </h4>
-            <p class="el-head">Show me your faith</p>
-            <span>Thursday 02:00 PM</span>
-            <p class="el-cta"><a class="btn btn-primary" href="#" role="button">Details &rarr;</a></p>
-          </div>
-          
-          <div class="el-block item">
-            <h4> SEP 19 </h4>
-            <p class="el-head">Perseravance of the saints</p>
-            <span>Saturday 10:00 AM</span>
-            <p class="el-cta"><a class="btn btn-primary" href="#" role="button">Details &rarr;</a></p>
-          </div>
-          <div class="el-block item">
-            <h4> OCT 14 </h4>
-            <p class="el-head">God's irresistable grace</p>
-            <span>Sunday 11:00 AM</span>
-            <p class="el-cta"><a class="btn btn-primary" href="#" role="button">Details &rarr;</a></p>
-          </div>
-          <div class="el-block item">
-            <h4> JULY 16 </h4>
-            <p class="el-head">Weekly meeting &amp; prayer</p>
-            <span>Monday 07:00 AM</span>
-            <p class="el-cta"><a class="btn btn-primary" href="#" role="button">Details &rarr;</a></p>
-          </div>
-          <div class="el-block item">
-            <h4> JUL 29 </h4>
-            <p class="el-head">Show me your faith</p>
-            <span>Thursday 02:00 PM</span>
-            <p class="el-cta"><a class="btn btn-primary" href="#" role="button">Details &rarr;</a></p>
-          </div>
-          <div class="el-block item">
-            <h4> SEP 19 </h4>
-            <p class="el-head">Perseravance of the saints</p>
-            <span>Saturday 10:00 AM</span>
-            <p class="el-cta"><a class="btn btn-primary" href="#" role="button">Details &rarr;</a></p>
-          </div>
-          <div class="el-block item">
-            <h4> OCT 14 </h4>
-            <p class="el-head">God's irresistable grace</p>
-            <span>Sunday 11:00 AM</span>
-            <p class="el-cta"><a class="btn btn-primary" href="#" role="button">Details &rarr;</a></p>
-          </div>
-        {% endcomment %}
+            {% endfor %}
         </div>
       </div>
     </div>
@@ -171,28 +126,6 @@
             <a class="btn btn-primary" href="{%url 'article' article.id%}" role="button">Leer articulo →</a> </div>
         </div> 
       {%endfor %}
-      
-{% comment %}     
-
-      <!--Blog list-->
-      
-      <div class="row">
-        <div class="col-md-4 col-sm-4"> <img class="img-responsive center-block" src="images/blog-thumb-2.jpg" alt="bulletin blog"> </div>
-        <div class="col-md-8 col-sm-8 bulletin">
-          <h4 class="media-heading">Lord is Sufficient for all of our needs </h4>
-          <p>on 17th June 2014 by <a href="#" class="link-reverse">Jose Mathew</a></p>
-          <p class="media-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam. Lorem ipsum dolor sit amet...</p>
-          <a class="btn btn-primary" href="blog-single.html" role="button">Read Article →</a> </div>
-      </div>
-    </div>
-    <!--// col md 9--> 
-    
-    <!--Latest Sermons-->
-    <div class="col-md-3">
-      <div class="well hidden">
-    
-      </div>
-      {% endcomment %}
     </div>
   </div>
 </div> 

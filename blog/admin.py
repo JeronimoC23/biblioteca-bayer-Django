@@ -17,7 +17,7 @@ class ArticleAdmin(admin.ModelAdmin):
 
 class EventAdmin(admin.ModelAdmin):
     readonly_fields= ('created_at',)
-    list_display = ('title', 'fecha')
+    list_display = ('title', 'fecha', 'public')
     search_fields = ('title', 'description','fecha')
 
 class SubCoAdmin(admin.ModelAdmin):

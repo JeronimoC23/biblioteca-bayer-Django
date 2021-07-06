@@ -1,15 +1,17 @@
 {% for article in articles %}
           
+            {%if article.public == True%}
                 {% if article.image != 'null' and article.image.url|length >= 1%}
                     
                 <div class="row has-margin-bottom">
                 {%endif%}
                 <div class="col-md-4 col-sm-4"> <img class="img-responsive center-block" src="{{article.image.url}}" alt="article blog"> </div>
                 <div class="col-md-8 col-sm-8 bulletin">
-                <h4 class="media-heading"><a href="{%url 'article' article.id%}">{{article.title}} </a> </h4>
+                <h4 class="media-heading"><a href="{%url 'article' article.id%}">{{article.title}}</a> </h4>
                 <p> {{article.created_at}} <a href="#" class="link-reverse">{{article.author}} </a></p>
                 <p class="media-content">{{article.content | safe}}</p>
                 <a class="btn btn-primary"  href="{%url 'article' article.id%}" role="button">Leer articulo →</a> </div>
+                
                 </div>
-
+            {%endif%}
 {% endfor %}

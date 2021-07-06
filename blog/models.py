@@ -20,11 +20,11 @@ class Article(models.Model):
     title= models.CharField(max_length=100, verbose_name="Titulo")
     content=RichTextField(verbose_name="Contenido")
     slug=models.CharField(verbose_name="Friendly URL", unique=True, max_length=250)
-    public=models.BooleanField(default=False,verbose_name="Public?")
+    public=models.BooleanField(default=False,verbose_name="Publico?")
     created_at =models.DateTimeField(auto_now_add=True, verbose_name="Created at")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Updated at")
     image = models.ImageField(default="null", verbose_name="Image",upload_to="articles")
-    subcomision = models.ManyToManyField(SubCom, verbose_name="Subcomision")
+    subcomision = models.ManyToManyField(SubCom, verbose_name="Subcomision", default="Equipo Biblioteca Bayer")
     author = models.CharField(max_length=50, verbose_name="Autor", default="Equipo Biblioteca Bayer")
     
 

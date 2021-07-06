@@ -68,7 +68,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'pages.context_processors.get_pages',
                 'blog.context.get_articles',
-                'blog.context.get_categories',
+                'blog.context.get_subcomisiones',
 
             ],
         },

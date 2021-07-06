@@ -6,7 +6,7 @@ from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 def index(request):
-    events = Event.objects.all()
+    events = Event.objects.filter(public=True)
     articles = Article.objects.filter(public=True)
     clase = "active"
     return render(request,'mainapp/index.html',{
@@ -28,5 +28,9 @@ def subcom(request, subcom_id):
         'subcomision': subcomision,
         'articles': articles
     })
+
+
+
+
 
 
