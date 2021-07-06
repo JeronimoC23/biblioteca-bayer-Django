@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from blog.models import Article, Category, Event
+from blog.models import Article,  Event
 from django.core.paginator import Paginator
 
 
@@ -37,7 +37,7 @@ def article(request, article_id):
 
 def event(request, event_id):
     event = get_object_or_404(Event, id=event_id)
-
+    
     return render (request, './mainapp/templates/mainapp/index.html',{
         "event": event,
     })

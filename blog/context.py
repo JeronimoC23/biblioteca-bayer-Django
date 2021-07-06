@@ -1,4 +1,4 @@
-from blog.models import Article, Category, Event
+from blog.models import Article, SubCom, Event
 
 def get_articles(request):
 
@@ -9,12 +9,12 @@ def get_articles(request):
     }
 
 def get_categories(request):
-    categories_in_use = Article.objects.filter(public=True).values_list('categories', flat=True)
-    categories = Category.objects.filter(id__in=categories_in_use).values_list('id', 'name')
+    subcomisiones_in_use = Article.objects.filter(public=True).values_list('subcomision', flat=True)
+    subcomisiones = SubCom.objects.filter(id__in=subcomisiones_in_use).values_list('id', 'name')
     
     return {
-        'categories': categories,
-        'ids':categories_in_use
+        'subcomisiones': subcomisiones,
+        'ids':subcomisiones_in_use
 
     }
 

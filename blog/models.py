@@ -3,14 +3,14 @@ from ckeditor.fields import RichTextField
 
 # Create your models here.
 
-class Category(models.Model):
-    name = models.CharField(max_length=100, verbose_name="Name")
-    description = models.CharField(max_length=255, verbose_name="Description")
-    created_at= models.DateTimeField(auto_now_add=True)
+class SubCom(models.Model):
+    name = models.CharField(max_length=100, verbose_name="Nombre")
+    description = models.TextField(verbose_name="Descripcion")
+    image = models.ImageField(default="null", verbose_name="Image",upload_to="articles")
     
     class Meta:
-        verbose_name = "Category"
-        verbose_name_plural = "Categories"
+        verbose_name = "Subcomision"
+        verbose_name_plural = "Subcomisiones"
 
     def __str__(self):
         return self.name
@@ -24,12 +24,13 @@ class Article(models.Model):
     created_at =models.DateTimeField(auto_now_add=True, verbose_name="Created at")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Updated at")
     image = models.ImageField(default="null", verbose_name="Image",upload_to="articles")
-    categories = models.ManyToManyField(Category, verbose_name="Category")
+    subcomision = models.ManyToManyField(SubCom, verbose_name="Subcomision")
     author = models.CharField(max_length=50, verbose_name="Autor", default="Equipo Biblioteca Bayer")
     
+
     class Meta:
-        verbose_name = "Article"
-        verbose_name_plural = "Articles"
+        verbose_name = "Articulo"
+        verbose_name_plural = "Articulos"
         ordering = ['-created_at']
         
     def __str__(self):
@@ -55,14 +56,3 @@ class Event(models.Model):
     def __str__(self):
         return self.title
 
-class SubCom(models.Model):
-    name = models.CharField(max_length=100, verbose_name="Nombre")
-    description = models.CharField(max_length=255, verbose_name="Descripcion")
-    image = models.ImageField(default="null", verbose_name="Image",upload_to="articles")
-    
-    class Meta:
-        verbose_name = "Subcomision"
-        verbose_name_plural = "Subcomisiones"
-
-    def __str__(self):
-        return self.name

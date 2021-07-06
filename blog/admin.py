@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Article, Event, SubCom,SubCom
+from .models import Article, Event, SubCom,SubCom
 # Register your models here.
 class CategoryAdmin(admin.ModelAdmin):
     readonly_fields= ('created_at',)
@@ -9,9 +9,9 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class ArticleAdmin(admin.ModelAdmin):
     readonly_fields= ('author','created_at','updated_at')
-    search_fields = ('title', 'content', 'categories__name')
+    search_fields = ('title', 'content')
     list_display = ('title', 'author','public', 'created_at')
-    list_filter = ('public', 'author', 'categories__name')
+    list_filter = ('public', 'author')
 
    
 
@@ -27,7 +27,6 @@ class SubCoAdmin(admin.ModelAdmin):
 
 
 
-admin.site.register(Category, CategoryAdmin)
 admin.site.register(Event, EventAdmin)
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(SubCom, SubCoAdmin)
