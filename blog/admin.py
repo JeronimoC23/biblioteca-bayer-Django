@@ -1,5 +1,7 @@
 from django.contrib import admin
 from .models import Article, Event, SubCom,SubCom
+
+from django.contrib.auth.models import *
 # Register your models here.
 class CategoryAdmin(admin.ModelAdmin):
     readonly_fields= ('created_at',)
@@ -26,8 +28,12 @@ class SubCoAdmin(admin.ModelAdmin):
 
 
 
-
+#Registro
 admin.site.register(Event, EventAdmin)
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(SubCom, SubCoAdmin)
+
+#Quitar
+admin.site.unregister(User)
+admin.site.unregister(Group)
 
