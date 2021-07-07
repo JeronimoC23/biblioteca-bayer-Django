@@ -42,20 +42,20 @@
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
        
-            <li>
+            <li class="{% if request.path == '' %} active {% endif %}">
                 <a href={%url 'index'%} > Inicio </a>
             </li>
-            <li>
+            <li class="{% if request.path == '/sobrenosotros/' %} active {% endif %}">
                 <a href={%url 'about'%}> Sobre Nosotros </a>
             </li>
-            <li>
+            <li class="{% if request.path == '/articles/'   %} active {% endif %}">
                 <a href={%url 'list'%}>Blog</a>
             </li>
             {% if subcomisiones.length != 0%}
               <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Subcomisiones<span class="caret"></span></a>
                 <ul class="dropdown-menu dropdown-menu-left" role="menu">
                   {%for subcom in subcomisiones%}
-                          <li>
+                          <li class="{% if request.path == "/subcomision/{{subcom.0}}"   %} active {% endif %}">
                               <a href={%url 'subcomision' subcom.0 %}> {{subcom.1}}</a>
                           </li>
                   {% endfor %}
