@@ -52,7 +52,7 @@ class Event(models.Model):
     class Meta:
         verbose_name = "Evento"
         verbose_name_plural = "Eventos"
-        ordering = ['-created_at']
+        ordering = ['fecha']
     def __str__(self):
         return self.title
 
