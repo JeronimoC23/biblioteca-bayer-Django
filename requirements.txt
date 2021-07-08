@@ -3,3 +3,4 @@ django
 django-heroku
 whitenoise
 django-ckeditor
+pillow
