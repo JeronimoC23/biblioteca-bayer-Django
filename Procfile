@@ -1,1 +1,1 @@
-web: gunicorn bibliotecabayer.wsgi
+web: gunicorn DjangoWebProyect.wsgi
