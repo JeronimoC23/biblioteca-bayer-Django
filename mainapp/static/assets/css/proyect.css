@@ -24,7 +24,7 @@ Author : Jeronimo Clinaz
 8. LATEST BLOG
 9. LATEST SERMONS
 10. IMAGE GALLERY
-11. BIBLE QUOTES
+11. QUOTES
 12. SUBSCRIBE
 13. FOOTER
 14. SUB PAGES
@@ -267,6 +267,7 @@ background-color: #E7E0D7;
 	margin-left:0;
 }
 }
+
 
 /*========== 2. NAVIGATION BAR ==============*/
 
@@ -855,6 +856,16 @@ footer a:hover, footer a:focus {
 }
 }
 /*========== 15. BLOG ==============*/
+.pagination{
+	text-align: center;
+	margin-right: 0;
+	font-family: 'Droid Serif', Arial, sans-serif;
+	font-weight:300;
+}
+.page-item{
+	text-align: center;
+	
+}
 
 .pagination>li>a, .pagination>li>span {
 	color:#483f34;
