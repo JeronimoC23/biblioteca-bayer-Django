@@ -5,11 +5,17 @@
 {% block content %}
 
 <!--SUBPAGE HEAD-->
-
 <div class="subpage-head has-margin-bottom">
   <div class="container">
     <h3>LITERATURA</h3>
     <p class="lead">Publicaciones y articulos de nuestra literatura</p>
+  <div class="input-group">
+  <form class="d-flex" method=POST action="{% url 'search'%}">
+    {% csrf_token %}
+    <input type="search" class="form-control rounded" placeholder="Busca un articulo" aria-label="Search"  aria-describedby="search-addon" name="searched"/>
+    <button type="submit" class="btn btn-outline-primary">Buscar</button>
+  </form>
+</div>
   </div>
 </div>
 

@@ -43,3 +43,14 @@ def event_detail(request, event_id):
     return render (request, 'events/detail_event.html',{
         "event": event,
     })
+
+def search(request):
+    if request.method =="POST":
+        searched = request.POST['searched']
+        allPosts= Article.objects.filter(title__contains=searched)
+        return render(request, 'articles/search.html', {
+            "searched":searched,
+            'allPosts':allPosts
+        })
+    else:
+        return render(request, 'mainapp/index.html')
