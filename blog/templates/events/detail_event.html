@@ -1,7 +1,7 @@
 {% extends 'mainapp/layout.html' %}
 
 {% block title%}
-    {{.title}}
+    {{event.title}}
 {% endblock %}
 
 
@@ -9,8 +9,8 @@
 {%block content%}
 <div class="subpage-head has-margin-bottom">
   <div class="container">
-    <h3>{{article.title}}</h3>
-    <p class="lead">{{article.created_at}}<a href="#" class="link-reverse">{{article.author}}</a></p>
+    <h3>{{event.title}}</h3>
+    <p class="lead">{{event.fecha|date:'d/m/Y '}} <a href="#" class="link-reverse">{{event.author}}</a></p>
   </div>
 </div>
 
@@ -19,8 +19,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 has-margin-bottom">
-      <article class="blog-content">
-      {{article.content | safe}}  
+      <article class="blog-content"><img src="{{event.image.url}}" alt="imagen-evento" class="img-responsive has-margin-xs-bottom">
+      {{event.content | safe}}  
       </article>
     </div>
   </div> 
