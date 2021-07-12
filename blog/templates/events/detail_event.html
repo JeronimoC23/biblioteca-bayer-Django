@@ -1,7 +1,7 @@
 {% extends 'mainapp/layout.html' %}
 
 {% block title%}
-    {{article.title}}
+    {{.title}}
 {% endblock %}
 
 
@@ -10,7 +10,7 @@
 <div class="subpage-head has-margin-bottom">
   <div class="container">
     <h3>{{article.title}}</h3>
-    <p class="lead">{{article.created_at|date:'d/m/Y '}} <a href="#" class="link-reverse">{{article.author}}</a></p>
+    <p class="lead">{{article.created_at}}<a href="#" class="link-reverse">{{article.author}}</a></p>
   </div>
 </div>
 
@@ -19,7 +19,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 has-margin-bottom">
-      <article class="blog-content"><img src="{{article.image.url}}" alt="imagen-articulo" class="img-responsive has-margin-xs-bottom">
+      <article class="blog-content">
       {{article.content | safe}}  
       </article>
     </div>

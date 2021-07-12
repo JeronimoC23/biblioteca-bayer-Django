@@ -107,7 +107,7 @@
 </div> 
 <!-- // END EVENT LISTS --> 
 
-<!-- BLOG LIST / LATEST SERMONS -->
+<!-- BLOG LIST -->
 <div class="container has-margin-bottom">
   <div class="row">
     <div class="col-md-12 has-margin-bottom">
@@ -121,8 +121,9 @@
           <div class="col-md-4 col-sm-4"> <img class="img-responsive center-block" src="{{article.image.url}}" alt="bulletin blog"> </div>
           <div class="col-md-8 col-sm-8 bulletin">
             <h4 class="media-heading">{{article.title}} </h4>
-            <p>{{article.created_at}}<strong class="link-reverse"> {{article.author}}</strong></p>
+            <p>{{article.created_at|date:'d/m/Y '}}   <strong class="link-reverse"> {{article.author}}</strong></p>
             <p> {{article.content|safe|truncatechars:300 }}</p>
+            </br>
             <a class="btn btn-primary" href="{%url 'article' article.id%}" role="button">Leer articulo →</a> </div>
         </div> 
       {%endfor %}
