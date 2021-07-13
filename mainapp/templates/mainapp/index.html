@@ -19,16 +19,16 @@
   	    		</li>
   	    		<li class="slide-two">
                  <div class="flexslider-caption">
- <h2 class="carousel-title">ARCHIVOS DEL SUR</h2>
-          <p class="lead">Mapeo de nuestra historia, archivos, documentos, investigaciones y tesis</p>
-          <p><a class="btn btn-lg btn-primary" href="http://archivosdelsur.fiqus.coop/" role="button" target="blank">Conoce mas &rarr;</a></p>
+          <h1 class="carousel-title">ARCHIVOS DEL SUR</h1>
+ <h3 class="carousel-title">Mapeo de nuestra historia, archivos, documentos, investigaciones y tesis</h3>                          
+<p><a class="btn btn-lg btn-primary" href="http://archivosdelsur.fiqus.coop/" role="button" target="blank">Conoce mas &rarr;</a></p>
           </div>
   	    		</li>
   	    		<li class="slide-three">
                  <div class="flexslider-caption">
-<h2 class="carousel-title">FERIA DEL LIBRO</h2>
-          <p class="lead">Evento anual de encuentro intercultural e intercolegial de libros <em>Villa La Angostura</em></p>
-          <p><a class="btn btn-lg btn-primary" href="#gallery" role="button">Ver fotos&rarr;</a></p>
+          <h1 class="carousel-title">FERIA DEL LIBRO</h1>
+ <h3 class="carousel-title">Evento anual de encuentro intercultural e intercolegial de libros <em>Villa La Angostura</em></h3>                          
+<p><a class="btn btn-lg btn-primary" href="#gallery" role="button">Ver fotos&rarr;</a></p>
           </div>
   	    		</li>
           </ul>
@@ -55,11 +55,11 @@
   </div>
   <div class="row feature-block">
     {%for subcomision in subcomisiones%}
-    <div class="col-md-3 col-sm-6 has-margin-bottom"> <img class="img-responsive" src="{{subcomision.image.url}} "alt="subcomision">
-      <h5>{{subcomision.name}}</h5>
-      <p>{{subcomision.description|truncatechars:300}}</p>
-      <p><a href="ministry.html" role="button">MAS INFO →</a></p>
-    </div>
+      <div class="col-md-3 col-sm-6 has-margin-bottom"> <img class="img-responsive" src="{{subcomision.3.url}}" alt="subcomision">
+        <h5>{{subcomision.1}}</h5>
+        <p>{{subcomision.2|truncatechars:300}}</p>
+        <p><a href="{%url 'subcomision' subcomision.0 %}"  role="button">MAS INFO →</a></p>
+      </div>
     {%endfor%}
     
 </div>
