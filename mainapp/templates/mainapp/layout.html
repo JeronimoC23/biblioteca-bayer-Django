@@ -56,7 +56,7 @@
                 <ul class="dropdown-menu dropdown-menu-left" role="menu">
                   {%for subcom in subcomisiones%}
                           <li >
-                              <a href={%url 'subcomision' subcom.0 %}> {{subcom.1}}</a>
+                              <a href={%url 'subcomision' subcom.id %}> {{subcom.name}}</a>
                           </li>
                   {% endfor %}
                 </ul>
