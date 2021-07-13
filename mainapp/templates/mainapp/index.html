@@ -54,30 +54,14 @@
     <h4> SUBCOMISIONES </h4>
   </div>
   <div class="row feature-block">
-    <div class="col-md-3 col-sm-6 has-margin-bottom"> <img class="img-responsive" src="{%static 'assets/images/CINE.jpg'%} "alt="subcomision">
-      <h5>CINECLUB</h5>
-      <p>{% lorem 30 w random  %} </p>
+    {%for subcomision in subcomisiones%}
+    <div class="col-md-3 col-sm-6 has-margin-bottom"> <img class="img-responsive" src="{{subcomision.image.url}} "alt="subcomision">
+      <h5>{{subcomision.name}}</h5>
+      <p>{{subcomision.description|truncatechars:300}}</p>
       <p><a href="ministry.html" role="button">MAS INFO →</a></p>
     </div>
-    <!-- /.col-md-3 -->
-    <div class="col-md-3 col-sm-6 has-margin-bottom"> <img class="img-responsive" src="{%static 'assets/images/miniarchivo.jpg'%}" alt="subcomision">
-      <h5>ARCHIVOS DEL SUR</h5>
-      <p>{% lorem 20 w random  %}</p>
-      <p><a href="ministry.html" role="button">MAS INFO →</a></p>
-    </div>
-    <!-- /.col-md-3 -->
-    <div class="col-md-3 col-sm-8 col-sm-offset-2 col-md-offset-0 center-this has-margin-bottom"> <img class="img-responsive" src="{%static 'assets/images/aquabosque.jpg'%}" alt="subcomision">
-      <h5>AGUABOSQUE</h5>
-      <p>{% lorem 40 w random  %}</p>
-      <p><a href="ministry.html" role="button">MAS INFO →</a></p>
-    </div>
-    <!-- /.col-md-3 --> 
-    <div class="col-md-3 col-sm-8 col-sm-offset-2 col-md-offset-0 center-this has-margin-bottom"> <img class="img-responsive" src="{%static 'assets/images/cocomanija.jpeg'%} " alt="subcomision">
-      <h5>SOCIAL - COCOMANIJA</h5>
-      <p>{% lorem 18 w random  %}</p>
-      <p><a href="ministry.html" role="button">MAS INFO →</a></p>
-    </div>
-  </div>
+    {%endfor%}
+    
 </div>
 <!-- // SUBCOMISIONES --> 
 
@@ -160,7 +144,7 @@
 <!--OUR GALLERY-->
 <div class="container has-margin-bottom" id="gallery">
   <div class="section-title">
-    <h4> OUR GALLERY </h4>
+    <h4> GALERIA </h4>
   </div>
   <div class="img-gallery row">
     <div class="col-sm-4 col-md-3"> <a class="fancybox" href="#" data-fancybox-group="gallery" title="image gallery"> <img src="{%static 'assets/images/miniarchivo.jpg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> </a> </div>
