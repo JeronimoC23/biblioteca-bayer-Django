@@ -3,24 +3,19 @@ from .models import Article, Event, SubCom,SubCom
 
 from django.contrib.auth.models import *
 # Register your models here.
-class CategoryAdmin(admin.ModelAdmin):
-    readonly_fields= ('created_at',)
-    list_display = ('name', 'created_at')
-    search_fields = ('name', 'description')
-
 
 class ArticleAdmin(admin.ModelAdmin):
-    readonly_fields= ('author','created_at','updated_at')
-    search_fields = ('title', 'content')
+    readonly_fields= ('created_at','updated_at')
+    search_fields = ('title', 'content','author')
     list_display = ('title', 'author','public', 'created_at')
-    list_filter = ('public', 'author')
+    list_filter = ('public', 'author','subcomision')
 
    
 
 class EventAdmin(admin.ModelAdmin):
     readonly_fields= ('created_at',)
-    list_display = ('title', 'fecha', 'public')
-    search_fields = ('title', 'description','fecha')
+    list_display = ('title', 'fecha', 'public','author')
+    search_fields = ('title', 'description','fecha','author')
 
 class SubCoAdmin(admin.ModelAdmin):
     list_display = ('name', 'description')
