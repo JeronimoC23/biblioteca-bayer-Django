@@ -5,7 +5,7 @@ from ckeditor.fields import RichTextField
 
 class SubCom(models.Model):
     name = models.CharField(max_length=100, verbose_name="Nombre")
-    description = models.TextField(verbose_name="Descripcion")
+    description = RichTextField(verbose_name="Descripcion")
     image = models.ImageField(default="null", verbose_name="Image",upload_to="articles")
     
     class Meta:
@@ -40,7 +40,7 @@ class Article(models.Model):
 
 class Event(models.Model):
     
-    title= models.CharField(max_length=100, verbose_name="Titulo")
+    title= models.CharField(max_length=80, verbose_name="Titulo")
     content=RichTextField(verbose_name="Contenido")
     slug=models.CharField(verbose_name="Friendly URL", unique=True, max_length=250)
     public=models.BooleanField(default=False,verbose_name="Public?")
