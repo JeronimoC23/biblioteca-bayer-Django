@@ -55,7 +55,7 @@
   </div>
   <div class="row feature-block">
     {%for subcomision in subcomisiones%}
-      <div class="col-md-3 col-sm-6 has-margin-bottom"> <img class="img-responsive" src="{{subcomision.3.url}}" alt="subcomision">
+      <div class="col-md-3 col-sm-6 has-margin-bottom"> <img class="img-responsive" src="{{subcomision.3.0}}" alt="subcomision">
         <h5>{{subcomision.1}}</h5>
         <p>{{subcomision.2|truncatechars:300}}</p>
         <p><a href="{%url 'subcomision' subcomision.0 %}"  role="button">MAS INFO →</a></p>

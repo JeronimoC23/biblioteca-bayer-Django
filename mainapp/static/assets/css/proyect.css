@@ -145,6 +145,8 @@ font-size: 25px;
 }
 .form-control {
 	border-radius:3px;
+	width: 80%;
+	display: inline-block;
 }
 .form-control:focus {
 	border-color: #BBB4A7;
@@ -163,6 +165,12 @@ font-size: 25px;
 	color: #e2c5a0;
 	background-color: #491980;
 	border-color: #7210e2;
+}
+.btnbusqueda{
+	display: inline-block;
+}
+.input-group{
+	width: 100%;
 }
 .well {
 	background:#f3c8c5;
