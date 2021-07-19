@@ -51,6 +51,9 @@ a {
 	color:#2c2c2a;
 	text-decoration:none;
 }
+form {
+	margin-top: 0;
+}
 a:hover, a:focus {
 	color:#E95D00;
 	text-decoration:none;
@@ -145,6 +148,7 @@ font-size: 25px;
 }
 .form-control {
 	border-radius:3px;
+	
 }
 .form-control:focus {
 	border-color: #BBB4A7;
@@ -159,11 +163,18 @@ font-size: 25px;
 	background-color: #600CC0;
 	border-color: #600CC0;
 }
+
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
 	color: #e2c5a0;
 	background-color: #491980;
 	border-color: #7210e2;
 }
+.btnbusqueda{
+	display: inline-block;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
 .well {
 	background:#f3c8c5;
 	border:0;

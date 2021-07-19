@@ -19,16 +19,16 @@
   	    		</li>
   	    		<li class="slide-two">
                  <div class="flexslider-caption">
- <h2 class="carousel-title">ARCHIVOS DEL SUR</h2>
-          <p class="lead">Mapeo de nuestra historia, archivos, documentos, investigaciones y tesis</p>
-          <p><a class="btn btn-lg btn-primary" href="http://archivosdelsur.fiqus.coop/" role="button" target="blank">Conoce mas &rarr;</a></p>
+          <h1 class="carousel-title">ARCHIVOS DEL SUR</h1>
+ <h3 class="carousel-title">Mapeo de nuestra historia, archivos, documentos, investigaciones y tesis</h3>                          
+<p><a class="btn btn-lg btn-primary" href="{%url 'subcomision' 1 %}" role="button" target="blank">Conoce mas &rarr;</a></p>
           </div>
   	    		</li>
   	    		<li class="slide-three">
                  <div class="flexslider-caption">
-<h2 class="carousel-title">FERIA DEL LIBRO</h2>
-          <p class="lead">Evento anual de encuentro intercultural e intercolegial de libros <em>Villa La Angostura</em></p>
-          <p><a class="btn btn-lg btn-primary" href="#gallery" role="button">Ver fotos&rarr;</a></p>
+          <h1 class="carousel-title">FERIA DEL LIBRO</h1>
+ <h3 class="carousel-title">Evento anual de encuentro intercultural e intercolegial de libros <em>Villa La Angostura</em></h3>                          
+<p><a class="btn btn-lg btn-primary" href="#gallery" role="button">Ver fotos&rarr;</a></p>
           </div>
   	    		</li>
           </ul>
@@ -40,19 +40,20 @@
 
 <div class="highlight-bg has-margin-bottom">
   <div class="container event-cta">
-    <div class="ec-txt"> <span>CATALOGO VIRTUAL</span>
-      <p>NUESTROS LIBROS Y DISPONIBILIDADES</p>
+    <div class="ec-txt"> <span>NUESTROS LIBROS Y DISPONIBILIDADES</span>
+      <p>CATALOGO VIRTUAL</p>
     </div>
-    <a class="btn btn-lg btn-primary" href="#" role="button">INGRESA AQUI →</a> </div>
+    <a class="btn btn-lg btn-primary" href="http://3169.bepe.ar/cgi-bin/koha/opac-search.pl?q=" role="button" target="blank">INGRESA AQUI →</a> </div>
 </div>
 
 <!-- // CATALOG --> 
 
 <!--SUBCOMISIONES-->
-<div class="container">
-  <div class="section-title">
+<div class="container" id="subcomisiones">
+  <div class="section-title" >
     <h4> SUBCOMISIONES </h4>
   </div>
+<<<<<<< HEAD
   <div class="row feature-block">
     {%for subcomision in subcomisiones%}
     <div class="col-md-3 col-sm-6 has-margin-bottom"> <img class="img-responsive" src="{{subcomision.image.url}} "alt="subcomision">
@@ -62,12 +63,23 @@
     </div>
     {%endfor%}
     
+=======
+    <div class="row feature-block">
+      {%for subcomision in subcoms%}
+        <div class="col-md-3 col-sm-6 has-margin-bottom"> <img class="img-responsive" src="{{subcomision.image.url}}" alt="subcomision">
+          <h5>{{subcomision.name}}</h5>
+          <p>{{subcomision.description|truncatechars:250|safe}}</p>
+          <p><a href="{%url 'subcomision' subcomision.id %}"  role="button">MAS INFO →</a></p>
+        </div>
+      {%endfor%}
+    </div>
+>>>>>>> Postgre-settings
 </div>
 <!-- // SUBCOMISIONES --> 
 
 <!--EVENT LISTS-->
 
-<div class="highlight-bg has-margin-bottom">
+<div class="highlight-bg has-margin-bottom"id="events">
   <div class="container event-list">
     <div class="section-title">
       <h4> EVENTOS &amp; ACTIVIDADES </h4>
@@ -100,7 +112,7 @@
       </div>
       
       <!--Blog list-->
-      {%for article in articles %}
+      {%for article in articles|slice:4 %}
         <div class="row has-margin-bottom">
           <div class="col-md-4 col-sm-4"> <img class="img-responsive center-block" src="{{article.image.url}}" alt="bulletin blog"> </div>
           <div class="col-md-8 col-sm-8 bulletin">

@@ -10,7 +10,7 @@ def get_articles(request):
 
 def get_subcomisiones(request):
     subcomisiones_in_use = Article.objects.filter(public=True).values_list('subcomision', flat=True)
-    subcomisiones = SubCom.objects.filter(id__in=subcomisiones_in_use).values_list('id', 'name')
+    subcomisiones = SubCom.objects.filter(id__in=subcomisiones_in_use).values_list('id', 'name','description','image')
     
     return {
         'subcomisiones': subcomisiones,

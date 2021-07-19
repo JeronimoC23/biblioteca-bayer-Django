@@ -11,12 +11,21 @@ def index(request):
     subcomisiones = SubCom.objects.all()
     events = Event.objects.filter(public=True, fecha__gte = today)
     articles = Article.objects.filter(public=True)
+<<<<<<< HEAD
     
+=======
+    subcoms = SubCom.objects.all()
+
+>>>>>>> Postgre-settings
     return render(request,'mainapp/index.html',{
         'title':'Home',
         'events':events,
         'articles': articles,
+<<<<<<< HEAD
         'subcomisiones':subcomisiones
+=======
+        'subcoms':subcoms
+>>>>>>> Postgre-settings
 
     })
 
