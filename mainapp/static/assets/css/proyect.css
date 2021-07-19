@@ -512,6 +512,8 @@ top: 25%;
 }
  .center-this .img-responsive {
  margin:0 auto;
+ max-width: 265px;
+ max-height: 177px;
 }
 }
 .articulosextracto{

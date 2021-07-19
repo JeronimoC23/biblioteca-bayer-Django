@@ -100,17 +100,31 @@
       </div>
       
       <!--Blog list-->
-      {%for article in articles|slice:4 %}
-        <div class="row has-margin-bottom">
-          <div class="col-md-4 col-sm-4"> <img class="img-responsive center-block" src="{{article.image.url}}" alt="bulletin blog"> </div>
-          <div class="col-md-8 col-sm-8 bulletin">
-            <h4 class="media-heading">{{article.title}} </h4>
-            <p>{{article.created_at|date:'d/m/Y '}}   <strong class="link-reverse"> {{article.author}}</strong></p>
-            <p> {{article.content|safe|truncatechars:300 }}</p>
-            </br>
-            <a class="btn btn-primary" href="{%url 'article' article.id%}" role="button">Leer articulo →</a> </div>
-        </div> 
+      
+      {%for article in articles|slice:4 %} 
+          <div class="row has-margin-bottom">
+            <div class="col-md-4 col-sm-4"> <img class="img-responsive " src="{{article.image.url}}" alt="bulletin blog"> </div>
+            <div class="col-md-8 col-sm-8 bulletin">
+              <h4 class="media-heading">{{article.title}} </h4>
+              <p>{{article.created_at|date:'d/m/Y '}}   <strong class="link-reverse"> {{article.author}}</strong></p>
+              <p> {{article.content|safe|truncatechars:300 }}</p>
+              </br>
+              <a class="btn btn-primary" href="{%url 'article' article.id%}" role="button">Leer articulo →</a> 
+            </div>  
+          </div> 
       {%endfor %}
+
+      {% comment %} <div class="row has-margin-bottom">
+        <div class="col-md-4 col-sm-4"> <img class="img-responsive center-block" src="images/blog-thumb-1.jpg" alt="bulletin blog"> </div>
+        <div class="col-md-8 col-sm-8 bulletin">
+          <h4 class="media-heading">Perseverance of the Saints </h4>
+          <p>on 17th June 2014 by <a href="#" class="link-reverse">Vincent John</a></p>
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam. Lorem ipsum dolor sit amet...</p>
+          <a class="btn btn-primary" href="blog-single.html" role="button">Read Article →</a> </div>
+      </div> {% endcomment %}
+
+
+      
     </div>
   </div>
 </div> 
