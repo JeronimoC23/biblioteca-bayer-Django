@@ -53,17 +53,6 @@
   <div class="section-title" >
     <h4> SUBCOMISIONES </h4>
   </div>
-<<<<<<< HEAD
-  <div class="row feature-block">
-    {%for subcomision in subcomisiones%}
-    <div class="col-md-3 col-sm-6 has-margin-bottom"> <img class="img-responsive" src="{{subcomision.image.url}} "alt="subcomision">
-      <h5>{{subcomision.name}}</h5>
-      <p>{{subcomision.description|truncatechars:300}}</p>
-      <p><a href="ministry.html" role="button">MAS INFO →</a></p>
-    </div>
-    {%endfor%}
-    
-=======
     <div class="row feature-block">
       {%for subcomision in subcoms%}
         <div class="col-md-3 col-sm-6 has-margin-bottom"> <img class="img-responsive" src="{{subcomision.image.url}}" alt="subcomision">
@@ -73,7 +62,6 @@
         </div>
       {%endfor%}
     </div>
->>>>>>> Postgre-settings
 </div>
 <!-- // SUBCOMISIONES --> 
 
