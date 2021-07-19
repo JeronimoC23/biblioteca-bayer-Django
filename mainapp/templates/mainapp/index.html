@@ -100,7 +100,7 @@
       </div>
       
       <!--Blog list-->
-      {%for article in articles %}
+      {%for article in articles|slice:4 %}
         <div class="row has-margin-bottom">
           <div class="col-md-4 col-sm-4"> <img class="img-responsive center-block" src="{{article.image.url}}" alt="bulletin blog"> </div>
           <div class="col-md-8 col-sm-8 bulletin">
