@@ -352,7 +352,7 @@ background-color: #E7E0D7;
  height: 60px;
 }
  .navbar-default.shrink {
-background-color: #fde585;
+background-color: #f3e5ac;
 border-bottom:solid 1px #fde585;
 box-shadow: 0 2px 2px -1px rgba(0, 0, 0, .1);
 -webkit-box-shadow: 0 2px 2px -1px rgba(0, 0, 0, .1);
@@ -811,7 +811,6 @@ a.list-group-item:hover, a.list-group-item:focus {
 }
 }
 /*========== 13. FOOTER ==============*/
-
 footer {
 	background:#53504c;
 	color:#f9f1e6;
@@ -838,6 +837,8 @@ footer a {
 footer a:hover, footer a:focus {
 	color: #FFB483;
 }
+
+
 .copyright {
 	background:#494743;
 	padding-top:20px;

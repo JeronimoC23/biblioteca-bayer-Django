@@ -89,8 +89,11 @@
             {% endblock %}
         </div>
     </div>
-  
-{% include 'mainapp/footer.html' %}
+{%if request.path == "/" %}
+  {% include 'mainapp/index-footer.html'%}
+{% else %}
+  {% include 'mainapp/footer.html' %}
+{% endif %}
 <!-- Bootstrap core JavaScript
 ================================================== --> 
 <!-- Placed at the end of the document so the pages load faster --> 
