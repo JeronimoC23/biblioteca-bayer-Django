@@ -10,11 +10,13 @@ def index(request):
     today = datetime.today()
     events = Event.objects.filter(public=True, fecha__gte = today)
     articles = Article.objects.filter(public=True)
-    
+    subcoms = SubCom.objects.all()
+
     return render(request,'mainapp/index.html',{
         'title':'Home',
         'events':events,
-        'articles': articles
+        'articles': articles,
+        'subcoms':subcoms
 
     })
 

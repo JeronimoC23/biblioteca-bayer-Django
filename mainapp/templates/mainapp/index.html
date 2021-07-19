@@ -54,11 +54,11 @@
     <h4> SUBCOMISIONES </h4>
   </div>
     <div class="row feature-block">
-      {%for subcomision in subcomisiones%}
-        <div class="col-md-3 col-sm-6 has-margin-bottom"> <img class="img-responsive" src="{{subcomision.3}}" alt="subcomision">
-          <h5>{{subcomision.1}}</h5>
-          <p>{{subcomision.2|truncatechars:250|safe}}</p>
-          <p><a href="{%url 'subcomision' subcomision.0 %}"  role="button">MAS INFO →</a></p>
+      {%for subcomision in subcoms%}
+        <div class="col-md-3 col-sm-6 has-margin-bottom"> <img class="img-responsive" src="{{subcomision.image.url}}" alt="subcomision">
+          <h5>{{subcomision.name}}</h5>
+          <p>{{subcomision.description|truncatechars:250|safe}}</p>
+          <p><a href="{%url 'subcomision' subcomision.id %}"  role="button">MAS INFO →</a></p>
         </div>
       {%endfor%}
     </div>
