@@ -40,24 +40,24 @@
 
 <div class="highlight-bg has-margin-bottom">
   <div class="container event-cta">
-    <div class="ec-txt"> <span>CATALOGO VIRTUAL</span>
-      <p>NUESTROS LIBROS Y DISPONIBILIDADES</p>
+    <div class="ec-txt"> <span>NUESTROS LIBROS Y DISPONIBILIDADES</span>
+      <p>CATALOGO VIRTUAL</p>
     </div>
-    <a class="btn btn-lg btn-primary" href="#" role="button">INGRESA AQUI →</a> </div>
+    <a class="btn btn-lg btn-primary" href="http://3169.bepe.ar/cgi-bin/koha/opac-search.pl?q=" role="button" target="blank">INGRESA AQUI →</a> </div>
 </div>
 
 <!-- // CATALOG --> 
 
 <!--SUBCOMISIONES-->
-<div class="container">
-  <div class="section-title">
+<div class="container" id="subcomisiones">
+  <div class="section-title" >
     <h4> SUBCOMISIONES </h4>
   </div>
     <div class="row feature-block">
       {%for subcomision in subcomisiones%}
         <div class="col-md-3 col-sm-6 has-margin-bottom"> <img class="img-responsive" src="{{subcomision.3}}" alt="subcomision">
           <h5>{{subcomision.1}}</h5>
-          <p>{{subcomision.2|truncatechars:300}}</p>
+          <p>{{subcomision.2|truncatechars:250|safe}}</p>
           <p><a href="{%url 'subcomision' subcomision.0 %}"  role="button">MAS INFO →</a></p>
         </div>
       {%endfor%}
@@ -67,7 +67,7 @@
 
 <!--EVENT LISTS-->
 
-<div class="highlight-bg has-margin-bottom">
+<div class="highlight-bg has-margin-bottom"id="events">
   <div class="container event-list">
     <div class="section-title">
       <h4> EVENTOS &amp; ACTIVIDADES </h4>

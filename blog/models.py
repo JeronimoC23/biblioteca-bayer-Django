@@ -25,7 +25,7 @@ class Article(models.Model):
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Updated at")
     image = models.ImageField(default="null", verbose_name="Image",upload_to="articles")
     subcomision = models.ManyToManyField(SubCom, verbose_name="Subcomision", default="Equipo Biblioteca Bayer")
-    author = models.CharField(max_length=50, verbose_name="Autor", default="Equipo Biblioteca Bayer")
+    author = models.CharField(max_length=50, verbose_name="Autor", default="La Bayer Band")
     
 
     class Meta:
