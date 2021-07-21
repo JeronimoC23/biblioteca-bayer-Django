@@ -9,7 +9,7 @@
                 <div class="col-md-8 col-sm-8 bulletin">
                 <h4 class="media-heading"><a href="{%url 'article' article.id%}">{{article.title}}</a> </h4>
                 <p> {{article.created_at|date:'d/m/Y '}}    <a href="#" class="link-reverse">{{article.author}} </a></p>
-                <p class="media-content">{{article.content |safe|truncatechars:300 }}</p>
+                <p class="media-content">{{article.content |safe }}</p>
                 </br>
                 <a class="btn btn-primary"  href="{%url 'article' article.id%}" role="button">Leer articulo →</a> </div>
                 
