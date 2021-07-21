@@ -55,7 +55,7 @@
   </div>
     <div class="row feature-block">
       {%for subcomision in subcoms%}
-        <div class="col-md-3 col-sm-6 has-margin-bottom"> <img class="img-responsive" src="{{subcomision.image.url}}" alt="subcomision">
+        <div class="col-md-3 col-sm-6 has-margin-bottom"> <img class="img-responsive center-block img-sub" src="{{subcomision.image.url}}" alt="subcomision">
           <h5>{{subcomision.name}}</h5>
           <p>{{subcomision.description|truncatechars:250|safe}}</p>
           <p><a href="{%url 'subcomision' subcomision.id %}"  role="button">MAS INFO →</a></p>

@@ -104,6 +104,11 @@ h6 {
 	margin:10px 0;
 	color: #1a1a1a;
 }
+.img-sub{
+	max-height: 150px;
+	min-width: 250px;
+	max-width: 250px;
+}
  @media (max-width:767px) {
 h1 {
 font-size: 55px;
