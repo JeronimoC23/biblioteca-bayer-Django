@@ -11,8 +11,8 @@
       <div class="col-sm-6 col-md-3">
         <h5>ACCESO RAPIDO</h5>
         <ul class="footer-links">
-          <li><a href="#events">Proximos eventos</a></li>
-          <li><a href="#subcomisiones">Subcomisiones</a></li>
+          <li><a href="{%if request.path == ""%}#events{% else %}{%url 'index' %} {% endif %}">Proximos eventos</a></li>
+          <li><a href="{%if request.path == ""%}#subcomisiones{% else %}{%url 'index'%} {% endif %}">Subcomisiones</a></li>
           <li><a href={%url 'about'%}>Sobre nosotros</a></li>
           <li><a href={%url 'list'%}>Blog</a></li>
         </ul>

@@ -109,6 +109,10 @@ h6 {
 	min-width: 250px;
 	max-width: 250px;
 }
+.mons-font{
+	font-family: 'Montserrat', Arial, sans-serif;
+}
+
  @media (max-width:767px) {
 h1 {
 font-size: 55px;
@@ -306,6 +310,9 @@ background-color: #E7E0D7;
 	font-family: 'Montserrat', Arial, sans-serif;
 	text-transform:uppercase;
 }
+.dropdown-menu >li{
+	font-family: 'Montserrat', Arial, sans-serif;
+}
 /*On scroll Transition*/
 .navbar-brand, .navbar-brand img, .navbar, .navbar-nav, .nav>li>a {
 	-webkit-transition: all 0.3s;
@@ -482,6 +489,7 @@ top: 25%;
 }
  .event-cta p {
  margin-bottom:0;
+ 
 }
 .event-cta .btn {
  float:right;
@@ -523,6 +531,14 @@ top: 25%;
 }
 .articulosextracto{
 	margin-bottom: 30px;
+}
+.extract{
+	color: rgb(68, 65, 65);
+	margin-bottom: 10px;
+}
+.subcomimage{
+	height: 100%;
+	width: 100%;
 }
 /*========== 6. EVENT LIST ==============*/
 
