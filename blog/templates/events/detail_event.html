@@ -22,6 +22,15 @@
       <article class="blog-content"><img src="{{event.image.url}}" alt="imagen-evento" class="img-responsive has-margin-xs-bottom">
       {{event.content | safe}}  
       </article>
+      <div title="Add to Calendar" class="addeventatc">
+    Agregar al calendario
+    <span class="start">08/02/2021 08:00 AM</span>
+    <span class="end">08/02/2021 10:00 AM</span>
+    <span class="timezone">America/Argentina
+</span>
+    <span class="title">{{event.title}}</span>
+    <span class="description">{{event.content|safe}}</span>
+</div>
     </div>
   </div> 
 </div>
