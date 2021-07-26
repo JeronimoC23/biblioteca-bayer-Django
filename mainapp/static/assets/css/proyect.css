@@ -321,6 +321,8 @@ background-color: #E7E0D7;
 }
 .navbar-brand {
 	height:85px;
+	padding: 5px 5px 5px 5px;
+
 }
 .navbar-brand img {
 	max-height:100%;
