@@ -4,3 +4,4 @@ django-heroku
 whitenoise
 django-ckeditor
 pillow
+django-social-share
