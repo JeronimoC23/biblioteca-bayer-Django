@@ -191,7 +191,7 @@ font-size: 25px;
 	box-shadow:none;
 }
 .highlight-bg {
-	background:#f3c8c5;
+	background:#FFC533;
 	padding: 24px 0;
 }
 .has-margin-top {
@@ -349,7 +349,7 @@ background-color: #E7E0D7;
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
 	color: #483f34;
-	background-color: #ffc55f;
+	background-color: #FF1F1F;
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
 	border-radius:5px;
@@ -366,7 +366,7 @@ background-color: #E7E0D7;
  height: 60px;
 }
  .navbar-default.shrink {
-background-color: #f3e5ac;
+background-color: #ff7b00;
 border-bottom:solid 1px #fde585;
 box-shadow: 0 2px 2px -1px rgba(0, 0, 0, .1);
 -webkit-box-shadow: 0 2px 2px -1px rgba(0, 0, 0, .1);
@@ -880,7 +880,7 @@ footer a:hover, footer a:focus {
 
 
 .subpage-head {
-	background-color:#f9f1e6;
+	background-color:#FFB41F;
 	padding-top: 80px;
 	padding-bottom: 20px;
 }
