@@ -1,5 +1,8 @@
 {% extends 'mainapp/layout.html' %}
 {% load social_share %}
+{%block head%}
+<meta name="keywords" content="{{article.title}} "> 
+{%endblock%}
 {% block title%}
     {{article.title}}
 {% endblock %}
