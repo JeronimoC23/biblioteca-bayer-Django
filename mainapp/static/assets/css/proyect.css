@@ -466,6 +466,10 @@ top: 25%;
 	text-shadow: 1px 1px 2px black;	
 }
 /*========== 4. UPCOMING EVENT ==============*/
+.event-date{
+	font-size:23px;
+	color:rgb(44, 44, 44);
+}
 
 .event-cta {
 	text-align:center;
