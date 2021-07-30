@@ -98,7 +98,7 @@
             <div class="el-block item">
               <h4>{{event.fecha|date:'d/m/Y '}} </h4>
               <p class="el-head">{{event.title}}</p>
-              <span>{{event.author}}</span>
+              <span class="event-date">{{event.fecha|date:'H:i'}}</span>
               <p class="el-cta"><a class="btn btn-primary" href="{%url 'event' event.id%}" role="button">Detalles &rarr;</a></p>
             </div> 
             {% endfor %}

@@ -1,5 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from datetime import datetime  
 
 # Create your models here.
 
@@ -44,10 +45,10 @@ class Event(models.Model):
     content=RichTextField(verbose_name="Contenido")
     slug=models.CharField(verbose_name="Friendly URL", unique=True, max_length=250)
     public=models.BooleanField(default=False,verbose_name="Public?")
-    created_at =models.DateTimeField(auto_now_add=True, verbose_name="Created at")
+    created_at =models.DateTimeField(auto_now_add=True, verbose_name="Creado")
     image = models.ImageField(default="null", verbose_name="Image",upload_to="articles")
     author = models.CharField(max_length=50, verbose_name="Autor", default="La Bayer Band")
-    fecha = models.DateField(verbose_name="Fecha del evento")
+    fecha = models.DateTimeField(default=datetime.now, blank=True, verbose_name="Fecha del evento")
 
     class Meta:
         verbose_name = "Evento"
