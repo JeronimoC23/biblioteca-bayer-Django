@@ -11,11 +11,15 @@
     <p class="lead">Publicaciones y articulos de nuestra autoria</p>
   </div> 
 </div>
-<div class="input-group col-md-9">
+<div class="input-group col-md-12">
     <form class="d-flex" method=POST action="{% url 'search'%}">
       {% csrf_token %}
-    <input type="search" class="form-control rounded" placeholder="Busca un articulo" aria-label="Search"  aria-describedby="search-addon" name="searched"/>
-    <button type="submit" class="btn btn-outline-primary">Buscar</button>
+      <div class="col-md-9  has-margin-bottom">
+        <input type="search" class="form-control rounded" placeholder="Busca un articulo" aria-label="Search"  aria-describedby="search-addon" name="searched"/>
+      </div>
+      <div class="col-md-3">
+        <button type="submit" class="btn btn-primary">Buscar</button>
+      </div>
     </form>
 </div>
 

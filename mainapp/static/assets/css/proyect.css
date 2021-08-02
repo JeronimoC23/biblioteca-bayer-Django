@@ -170,7 +170,7 @@ font-size: 25px;
 .btn-primary {
 	color: #e2c5a0;
 	background-color: #600CC0;
-	border-color: #600CC0;
+	border-color: #480c8d;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
@@ -340,11 +340,11 @@ background-color: #E7E0D7;
 	color: #2c2c2a;
 }
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:active {
-	color: #f3540b;
+	color: #600CC0;
 	background-color: transparent;
 }
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
-	color: #f3540b;
+	color: #600CC0;
 	background-color: transparent;
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
@@ -363,7 +363,7 @@ background-color: #E7E0D7;
 
 @media (min-width:992px) {
  .navbar-brand img {
- height: 60px;
+ height: 80px;
 }
  .navbar-default.shrink {
 background-color: #ff7b00;
@@ -375,7 +375,7 @@ box-shadow: 0 2px 2px -1px rgba(0, 0, 0, .1);
  height: 75px;
 }
  .shrink .navbar-brand img {
- height: 45px;
+ height: 70px;
 }
  .navbar.shrink {
  min-height: 50px;
