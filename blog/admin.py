@@ -7,8 +7,8 @@ from django.contrib.auth.models import *
 class ArticleAdmin(admin.ModelAdmin):
     readonly_fields= ('created_at','updated_at')
     search_fields = ('title', 'content','author')
-    list_display = ('title', 'author','public', 'created_at')
-    list_filter = ('public', 'author','subcomision')
+    list_display = ('title', 'author','public', 'created_at','fav')
+    list_filter = ('public', 'author','subcomision','fav')
 
    
 

@@ -27,6 +27,7 @@ class Article(models.Model):
     image = models.ImageField(default="null", verbose_name="Image",upload_to="articles")
     subcomision = models.ManyToManyField(SubCom, verbose_name="Subcomision", default="La Bayer Band")
     author = models.CharField(max_length=50, verbose_name="Autor", default="La Bayer Band")
+    fav = models.BooleanField(default=False,verbose_name="Relevante")
     
 
     class Meta:
