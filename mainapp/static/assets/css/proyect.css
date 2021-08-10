@@ -288,7 +288,9 @@ background-color: #E7E0D7;
 }
 }
 
-
+.img-min{
+	max-height: 222px;
+}
 /*========== 2. NAVIGATION BAR ==============*/
 
 @media (min-width:768px) {

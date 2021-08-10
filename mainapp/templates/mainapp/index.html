@@ -13,22 +13,22 @@
             <li class="slide-one">
             <div class="flexslider-caption">
 <h3 class="carousel-title">NUESTRO NOMBRE</h3>
-          <h1 class="carousel-title">¿QUIEN FUE OSVALDO BAYER?</h1>
-          <p><a class="btn btn-giant btn-primary" href={%url 'about'%} role="button">Leer mas &rarr;</a></p>
+          <h1 class="carousel-title">¿QUIÉN ES OSVALDO BAYER?</h1>
+          <p><a class="btn btn-giant btn-primary" href={%url 'about'%} role="button">Leer más &rarr;</a></p>
           </div>
   	    		</li>
   	    		<li class="slide-two">
                  <div class="flexslider-caption">
           <h1 class="carousel-title">ARCHIVOS DEL SUR</h1>
- <h3 class="carousel-title">Mapeo de nuestra historia, archivos, documentos, investigaciones y tesis</h3>                          
-<p><a class="btn btn-lg btn-primary" href="{%url 'subcomision' 1 %}" role="button" target="blank">Conoce mas &rarr;</a></p>
+ <h3 class="carousel-title">Voces y memorias de los pobladores del Nahuel Huapi</h3>                          
+<p><a class="btn btn-lg btn-primary" href="{%url 'subcomision' 1 %}" role="button" target="blank">Conocé más &rarr;</a></p>
           </div>
   	    		</li>
   	    		<li class="slide-three">
                  <div class="flexslider-caption">
-          <h1 class="carousel-title">FERIA DEL LIBRO</h1>
- <h3 class="carousel-title">Evento anual de encuentro intercultural e intercolegial de libros <em>Villa La Angostura</em></h3>                          
-<p><a class="btn btn-lg btn-primary" href="#gallery" role="button">Ver fotos&rarr;</a></p>
+          <h1 class="carousel-title">FERIA DEL LIBRO </h1>
+ <h3 class="carousel-title">INFANTIL Y JUVENIL</h3>                          
+<p><a class="btn btn-lg btn-primary" href="#gallery" role="button">Conocé más&rarr;</a></p>
           </div>
   	    		</li>
           </ul>
@@ -59,7 +59,7 @@
       
       {%for article in articles|slice:4 %} 
           {% if article.fav == True %}
-                    <div class="col-md-4 col-sm-4"> <img class="img-responsive center-block" src="{{article.image.url}}" alt="article blog"> </div>
+                    <div class="col-md-4 col-sm-4 img-min"> <img class="img-responsive center-block " src="{{article.image.url}}" alt="article blog"> </div>
                     <div class="col-md-8 col-sm-8 bulletin">
                         <h4 class="media-heading"><a href="{%url 'article' article.id%}">{{article.title}}</a> </h4>
                         <p> {{article.created_at|date:'d/m/Y '}}    <a href="#" class="link-reverse">{{article.author}} </a></p>
