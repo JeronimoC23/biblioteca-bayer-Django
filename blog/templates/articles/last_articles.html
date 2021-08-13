@@ -1,3 +1,4 @@
+{% load thumbnail %}
 {%for article in articles|slice:5 %}
           
             {%if article.public == True%}
@@ -5,7 +6,11 @@
                     
                 <div class="row has-margin-bottom">
                 {%endif%}
-                <div class="col-md-4 col-sm-4"> <img class="img-responsive center-block" src="{{article.image.url}}" alt="article blog"> </div>
+                <div class="col-md-4 col-sm-4">
+                    {% thumbnail article.image "360x225" crop="center" as im %} 
+                        <img class="img-responsive center-block" src="{{im.url}}" alt="bulletin blog"> 
+                    {% endthumbnail %}
+                </div>
                 <div class="col-md-8 col-sm-8 bulletin">
                     <h4 class="media-heading"><a href="{%url 'article' article.id%}">{{article.title}}</a> </h4>
                     <p> {{article.created_at|date:'d/m/Y '}}    <a href="#" class="link-reverse">{{article.author}} </a></p>
