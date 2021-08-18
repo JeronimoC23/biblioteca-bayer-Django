@@ -8,16 +8,17 @@ from datetime import datetime
 # Create your views here.
 def index(request):
     today = datetime.today()
-    subcomisiones = SubCom.objects.all()
     events = Event.objects.filter(public=True, fecha__gte = today)
     articles = Article.objects.filter(public=True)
     subcoms = SubCom.objects.all()
+    fav_articles = Article.objects.filter(fav=True, public=True)
 
     return render(request,'mainapp/index.html',{
         'title':'Home',
         'events':events,
         'articles': articles,
-        'subcoms':subcoms
+        'subcoms':subcoms,
+        'fav_articles':fav_articles,
 
     })
 
