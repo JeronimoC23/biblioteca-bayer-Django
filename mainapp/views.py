@@ -12,6 +12,7 @@ def index(request):
     articles = Article.objects.filter(public=True)
     subcoms = SubCom.objects.all()
     fav_articles = Article.objects.filter(fav=True, public=True)
+    
 
     return render(request,'mainapp/index.html',{
         'title':'Home',
