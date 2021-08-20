@@ -5,3 +5,4 @@ whitenoise
 django-ckeditor
 pillow
 django-social-share
+sorl.thumbnail
