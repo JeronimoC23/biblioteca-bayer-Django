@@ -1,5 +1,6 @@
 {% extends 'mainapp/layout.html' %}
 {% load social_share %}
+{%load thumbnail%}
 {%block head%}
 <meta name="keywords" content="{{article.title}} "> 
 {%endblock%}
@@ -22,8 +23,13 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 has-margin-bottom">
-      <article class="blog-content"><img src="{{article.image.url}}" alt="imagen-articulo" class="img-responsive has-margin-xs-bottom">
-      {{article.content | safe}}  
+      <article class="blog-content">
+      {% comment %} <img src="{{article.image.url}}" alt="imagen-articulo" class="img-responsive has-margin-xs-bottom"> {% endcomment %}
+      {% thumbnail article.image "1500x800" crop="center" as im %} 
+        <img class="img-responsive center-block img-sub" src="{{im.url}}" alt="bulletin blog" class="img-responsive has-margin-xs-bottom"> 
+      {% endthumbnail %}
+      </br>
+      <p>{{article.content | safe}}</p>  
       </article>
     </div>
     <div class="col-md-12 has-margin-bottom">

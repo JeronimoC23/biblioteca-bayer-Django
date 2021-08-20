@@ -104,11 +104,8 @@ h6 {
 	margin:10px 0;
 	color: #1a1a1a;
 }
-.img-sub{
-	max-height: 150px;
-	min-width: 250px;
-	max-width: 250px;
-}
+
+
 .mons-font{
 	font-family: 'Montserrat', Arial, sans-serif;
 }
@@ -183,7 +180,10 @@ font-size: 25px;
 	align-items: center;
 	margin-bottom: 15px;
 }
-
+.fav_art{
+	color:rgb(248, 211, 0);
+	background-color: #481781ef;
+}
 .well {
 	background:#f3c8c5;
 	border:0;
@@ -288,7 +288,9 @@ background-color: #E7E0D7;
 }
 }
 
-
+.img-min{
+	max-height: 222px;
+}
 /*========== 2. NAVIGATION BAR ==============*/
 
 @media (min-width:768px) {

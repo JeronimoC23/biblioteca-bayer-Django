@@ -1,5 +1,6 @@
 {% extends 'mainapp/layout.html' %}
 {% load static %}
+{% load thumbnail %}
 {% block title%}
     {{title}}
 {% endblock %}
@@ -13,22 +14,22 @@
             <li class="slide-one">
             <div class="flexslider-caption">
 <h3 class="carousel-title">NUESTRO NOMBRE</h3>
-          <h1 class="carousel-title">¿QUIEN FUE OSVALDO BAYER?</h1>
-          <p><a class="btn btn-giant btn-primary" href={%url 'about'%} role="button">Leer mas &rarr;</a></p>
+          <h1 class="carousel-title">¿QUIÉN ES OSVALDO BAYER?</h1>
+          <p><a class="btn btn-giant btn-primary" href={%url 'about'%} role="button">Leer más &rarr;</a></p>
           </div>
   	    		</li>
   	    		<li class="slide-two">
                  <div class="flexslider-caption">
           <h1 class="carousel-title">ARCHIVOS DEL SUR</h1>
- <h3 class="carousel-title">Mapeo de nuestra historia, archivos, documentos, investigaciones y tesis</h3>                          
-<p><a class="btn btn-lg btn-primary" href="{%url 'subcomision' 1 %}" role="button" target="blank">Conoce mas &rarr;</a></p>
+ <h3 class="carousel-title">Voces y memorias de los pobladores del Nahuel Huapi</h3>                          
+<p><a class="btn btn-lg btn-primary" href="{%url 'subcomision' 1 %}" role="button" target="blank">Conocé más &rarr;</a></p>
           </div>
   	    		</li>
   	    		<li class="slide-three">
                  <div class="flexslider-caption">
-          <h1 class="carousel-title">FERIA DEL LIBRO</h1>
- <h3 class="carousel-title">Evento anual de encuentro intercultural e intercolegial de libros <em>Villa La Angostura</em></h3>                          
-<p><a class="btn btn-lg btn-primary" href="#gallery" role="button">Ver fotos&rarr;</a></p>
+          <h1 class="carousel-title">FERIA DEL LIBRO </h1>
+ <h3 class="carousel-title">INFANTIL Y JUVENIL</h3>                          
+<p><a class="btn btn-lg btn-primary" href="#gallery" role="button">Conocé más&rarr;</a></p>
           </div>
   	    		</li>
           </ul>
@@ -41,9 +42,9 @@
 <div class="highlight-bg has-margin-bottom">
   <div class="container event-cta">
     <div class="ec-txt"> <span>NUESTROS LIBROS Y DISPONIBILIDADES</span>
-      <p class="mons-font">CATALOGO VIRTUAL</p>
+      <p class="mons-font">CATÁLOGO VIRTUAL</p>
     </div>
-    <a class="btn btn-lg btn-primary" href="http://3169.bepe.ar/cgi-bin/koha/opac-search.pl?q=" role="button" target="_blank">INGRESA AQUI →</a> </div>
+    <a class="btn btn-lg btn-primary" href="http://3169.bepe.ar/cgi-bin/koha/opac-search.pl?q=" role="button" target="_blank">INGRESA AQUÍ →</a> </div>
 </div>
 
 <!-- // CATALOG --> 
@@ -56,25 +57,78 @@
       </div>
       
       <!--Blog list-->
-      
-      {%for article in articles|slice:4 %} 
+      {% if fav_articles|length > 0%}
+        {%for article in fav_articles|slice:2 %} 
 
-          <div class="row has-margin-bottom">
-            <div class="col-md-4 col-sm-4"> <img class="img-responsive center-block" src="{{article.image.url}}" alt="bulletin blog"> </div>
-            <div class="col-md-8 col-sm-8 bulletin">
-              <h4 class="media-heading">
-                {{article.title}} 
-              </h4>
-              <p>
-                {{article.created_at|date:'d/m/Y '}} 
-                <a href="#" class="link-reverse">{{article.author}}</a>
-              </p>
-              
-              <div class="extract">{{article.content|safe|truncatechars_html:450}}</div>
-              <a class="btn btn-primary" href="{%url 'article' article.id%}" role="button">Leer articulo →</a> 
+            <div class="row has-margin-bottom">
+              <div class="col-md-4 col-sm-4">
+                {% thumbnail article.image "360x225" crop="center" as im %} 
+                  <img class="img-responsive center-block" src="{{im.url}}" alt="bulletin blog"> 
+                {% endthumbnail %}
+              </div>
+              <div class="col-md-8 col-sm-8 bulletin">
+                <h4 class="media-heading">
+                  {{article.title}} 
+                </h4>
+                <p>
+                  {{article.created_at|date:'d/m/Y '}} 
+                  <a href="#" class="link-reverse">{{article.author}}</a>
+                </p>
+                
+                <div class="extract">{{article.content|safe|truncatechars_html:450}}</div>
+                <a class="btn fav_art" href="{%url 'article' article.id%}" role="button">★ Artículo recomendado ★</a> 
+                {% comment %} <p class="btn fav_art" > ★ Articulo recomendado ★ </p> {% endcomment %}
+              </div>
             </div>
-          </div>
-      {%endfor %}
+        {%endfor %}
+        {%for article in articles|slice:2 %} 
+
+            <div class="row has-margin-bottom">
+              <div class="col-md-4 col-sm-4">
+                {% thumbnail article.image "360x225" crop="center" as im %} 
+                  <img class="img-responsive center-block" src="{{im.url}}" alt="bulletin blog"> 
+                {% endthumbnail %}
+              </div>
+              <div class="col-md-8 col-sm-8 bulletin">
+                <h4 class="media-heading">
+                  {{article.title}} 
+                </h4>
+                <p>
+                  {{article.created_at|date:'d/m/Y '}} 
+                  <a href="#" class="link-reverse">{{article.author}}</a>
+                </p>
+                
+                <div class="extract">{{article.content|safe|truncatechars_html:450}}</div>
+                <a class="btn btn-primary" href="{%url 'article' article.id%}" role="button">Leer artículo →</a> 
+              </div>
+            </div>
+        {%endfor %}
+      {% else %}
+        {%for article in articles|slice:4 %} 
+
+            <div class="row has-margin-bottom">
+              <div class="col-md-4 col-sm-4">
+                {% thumbnail article.image "360x225" crop="center" as im %} 
+                  <img class="img-responsive center-block" src="{{im.url}}" alt="bulletin blog"> 
+                {% endthumbnail %}
+              </div>
+              <div class="col-md-8 col-sm-8 bulletin">
+                <h4 class="media-heading">
+                  {{article.title}} 
+                </h4>
+                <p>
+                  {{article.created_at|date:'d/m/Y '}} 
+                  <a href="#" class="link-reverse">{{article.author}}</a>
+                </p>
+                
+                <div class="extract">{{article.content|safe|truncatechars_html:450}}</div>
+                <a class="btn btn-primary" href="{%url 'article' article.id%}" role="button">Leer artículo →</a> 
+    
+              </div>
+            </div>
+        {%endfor %}
+      {%endif%}
+
     </div>
   </div>
 </div> 
@@ -116,7 +170,11 @@
   </div>
     <div class="row feature-block">
       {%for subcomision in subcoms%}
-        <div class="col-md-3 col-sm-6 has-margin-bottom"> <img class="img-responsive center-block img-sub" src="{{subcomision.image.url}}" alt="subcomision">
+        <div class="col-md-3 col-sm-6 has-margin-bottom"> 
+          {% thumbnail subcomision.image "260x150" crop="center" as im %} 
+            <img class="img-responsive center-block img-sub" src="{{im.url}}" alt="bulletin blog"> 
+          {% endthumbnail %}
+          {% comment %} <img class="img-responsive center-block img-sub" src="{{subcomision.image.url}}" alt="subcomision"> {% endcomment %}
           <h5>{{subcomision.name}}</h5>
           <p>{{subcomision.description|truncatechars:250|safe}}</p>
           <p><a href="{%url 'subcomision' subcomision.id %}"  role="button">MAS INFO →</a></p>
@@ -157,14 +215,49 @@
     <h4> GALERIA </h4>
   </div>
   <div class="img-gallery row">
-    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="#" data-fancybox-group="gallery" title="image gallery"> <img src="{%static 'assets/images/miniarchivo.jpg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> </a> </div>
-    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="#" data-fancybox-group="gallery" title="image gallery"> <img src="{%static 'assets/images/cocomanija.jpeg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> </a> </div>
-    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="#" data-fancybox-group="gallery" title="image gallery"> <img src="{%static 'assets/images/miniarchivo.jpg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> </a> </div>
-    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="#" data-fancybox-group="gallery" title="image gallery"> <img src="{%static 'assets/images/aquabosque.jpg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> </a> </div>
-    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="#" data-fancybox-group="gallery" title="image gallery"> <img src="{%static 'assets/images/CINE.jpg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> </a> </div>
-    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="#" data-fancybox-group="gallery" title="image gallery"> <img src="{%static 'assets/images/miniarchivo.jpg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> </a> </div>
-    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="#" data-fancybox-group="gallery" title="image gallery"> <img src="{%static 'assets/images/cocomanija.jpeg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> </a> </div>
-    <div class="col-sm-4 col-md-3"> <a class="fancybox" href="#" data-fancybox-group="gallery" title="image gallery"> <img src="{%static 'assets/images/CINE.jpg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> </a> </div>
+    <div class="col-sm-4 col-md-3"> 
+      <a class="fancybox" href="{%static 'assets/images/biblio_nieve.jpeg'%}" data-fancybox-group="gallery" title="image gallery"> 
+        <img src="{%static 'assets/images/biblio_nieve.jpeg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> 
+      </a> 
+    </div>
+
+    <div class="col-sm-4 col-md-3">
+      <a class="fancybox" href="{%static 'assets/images/biblio_nieve.jpeg'%}" data-fancybox-group="gallery" title="image gallery"> 
+        <img src="{%static 'assets/images/biblio_nieve.jpeg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> 
+      </a> 
+    </div>
+
+    <div class="col-sm-4 col-md-3"> 
+      <a class="fancybox" href="{%static 'assets/images/biblio_nieve.jpeg'%}" data-fancybox-group="gallery" title="image gallery"> 
+        <img src="{%static 'assets/images/biblio_nieve.jpeg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> 
+      </a> 
+    </div>
+
+    <div class="col-sm-4 col-md-3">
+      <a class="fancybox" href="{%static 'assets/images/biblio_nieve.jpeg'%}" data-fancybox-group="gallery" title="image gallery"> 
+        <img src="{%static 'assets/images/biblio_nieve.jpeg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> 
+      </a> 
+    </div>  
+    <div class="col-sm-4 col-md-3"> 
+      <a class="fancybox" href="{%static 'assets/images/fotobiblio2.jpg'%}" data-fancybox-group="gallery" title="image gallery"> 
+        <img src="{%static 'assets/images/fotobiblio2.jpg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> 
+      </a> 
+    </div>
+    <div class="col-sm-4 col-md-3"> 
+      <a class="fancybox" href="{%static 'assets/images/fotobiblio1.jpg'%}" data-fancybox-group="gallery" title="image gallery"> 
+        <img src="{%static 'assets/images/fotobiblio1.jpg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> 
+      </a> 
+    </div>
+    <div class="col-sm-4 col-md-3"> 
+      <a class="fancybox" href="{% static 'assets/images/fotobiblio3.jpg'%}" data-fancybox-group="gallery" title="image gallery"> 
+        <img src="{%static 'assets/images/fotobiblio3.jpg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> 
+      </a> 
+    </div>
+    <div class="col-sm-4 col-md-3"> 
+      <a class="fancybox" href="{%static 'assets/images/fotobiblio2.jpg'%}" data-fancybox-group="gallery" title="image gallery"> 
+        <img src="{%static 'assets/images/fotobiblio2.jpg'%}" class="img-responsive" width="270" height="270" alt="image gallery"> 
+      </a> 
+    </div>
   </div>
 </div>
 <!--// END OUR GALLERY --> 
