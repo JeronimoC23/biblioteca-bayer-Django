@@ -136,6 +136,9 @@ font-size: 25px;
 	font-weight:700;
 	text-transform:uppercase;
 }
+.lnk{
+	color:#d3a785 ;
+}
 .btn-giant {
 	padding: 18px 30px;
 	font-size: 32px;
@@ -456,7 +459,7 @@ top: 25%;
 	background-size:cover;
 }
 .slide-two {
-	background:url(../images/archivo_contraste.jpg) no-repeat;
+	background:url(../images/archivoslaider.jpg) no-repeat;
 	background-size:cover;
 }
 .slide-three {
