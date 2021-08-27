@@ -1,25 +1,25 @@
 {%load static%}
 <!-- FOOTER -->
 
-<footer>
+<footer class="footer-i">
   <div class="container" id="contact">
     <div class="row">
       <div class="col-sm-6 col-md-3">
         <h5>SOBRE LA BIBLIOTECA</h5>
-        <p>La Bayer, es promotora de cultura y un referente por su compromiso con la comunidad. Siempre trabajó por la visibilización de los derechos humanos, el acceso a la tierra, la protección de la naturaleza y el acompañamiento a las comunidades mapuche</p>
+        <p>La Bayer, es promotora de cultura y un referente por su compromiso con la comunidad... <a href="{%url 'about'%}"class="lnk">Leer mas</a></p>
       </div>
       <div class="col-sm-6 col-md-3">
         <h5>ACCESO RAPIDO</h5>
         <ul class="footer-links">
-          <li><a href="{%if request.path == ""%}#events{% else %}{%url 'index' %} {% endif %}">Proximos eventos</a></li>
-          <li><a href="{%if request.path == ""%}#subcomisiones{% else %}{%url 'index'%} {% endif %}">Subcomisiones</a></li>
+          <li><a href="#events">Proximos eventos</a></li>
+          <li><a href="#subcomisiones">Subcomisiones</a></li>
           <li><a href={%url 'about'%}>Sobre nosotros</a></li>
           <li><a href={%url 'list'%}>Blog</a></li>
         </ul>
       </div>
       <div class="col-sm-6 col-md-3">
         <h5>DIRECCIÓN</h5>
-        <p>Biblioteca Popular Osvaldo Bayer<br>
+        <p>Biblioteca Osvaldo Bayer<br>
           Los Maquis 33<br>
           Villa La Angostura, Neuquén<br>
           <br>
