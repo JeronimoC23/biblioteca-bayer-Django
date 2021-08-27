@@ -1,6 +1,5 @@
 gunicorn
 django
-whitenoise
 django-ckeditor
 pillow
 django-social-share
