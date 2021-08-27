@@ -87,9 +87,9 @@ TEMPLATES = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'bayer_store',
-        'USER':'jero',
-        'PASSWORD':"localhost",
+        'NAME': os.getenv("DATABASE_NAME"),
+        'USER':os.getenv("DATABASE_USER"),
+        'PASSWORD':os.getenv("DATABASE_PASSWORD"),
         'PORT':'',
     }
 }
