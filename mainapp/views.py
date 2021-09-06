@@ -36,6 +36,13 @@ def subcom(request, subcom_id):
         'articles': articles
     })
 
+def feriadelibro(request):
+    return render(request, 'mainapp/feria.html'
+    )
+def osvaldbayer(request):
+    return render(request, 'mainapp/osvald.html'
+    )
+
 
 
 
