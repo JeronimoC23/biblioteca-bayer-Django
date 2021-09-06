@@ -10,7 +10,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 import sys
 import dj_database_url
-#import django_heroku
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -24,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'jm99k5)6m#bb*0v-$s1e$w2-*seoza5!2q8ek#rq6wdw+7g=38'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False") == "True"
+DEBUG = True#os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
@@ -145,7 +144,3 @@ STATICFILES_DIRS = (
 )
 
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-
-# Activate Django-Heroku.
-#django_heroku.settings(locals())
