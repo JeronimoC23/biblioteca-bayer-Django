@@ -5,3 +5,4 @@ pillow
 django-social-share
 sorl.thumbnail
 psycopg2
+dj_database_url

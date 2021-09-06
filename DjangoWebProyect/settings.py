@@ -8,6 +8,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import sys
+import dj_database_url
 #import django_heroku
 
 
@@ -22,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'jm99k5)6m#bb*0v-$s1e$w2-*seoza5!2q8ek#rq6wdw+7g=38'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True #os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 
 # Application definition
@@ -87,7 +89,7 @@ DATABASES = {
         'NAME': os.getenv("DATABASE_NAME", default='bayer_store'),
         'USER':os.getenv("DATABASE_USER",default='jero'),
         'PASSWORD':os.getenv("DATABASE_PASSWORD",default='localhost'),
-        'PORT':'25060',
+        #'PORT':'25060',
         'HOST': os.getenv("DATABASE_HOST")
     }
 }
