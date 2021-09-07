@@ -88,7 +88,7 @@ DATABASES = {
         'NAME': os.getenv("DATABASE_NAME", default='bayer_store'),
         'USER':os.getenv("DATABASE_USER",default='jero'),
         'PASSWORD':os.getenv("DATABASE_PASSWORD",default='localhost'),
-        #'PORT':'25060',
+        'PORT':'25060',
         'HOST': os.getenv("DATABASE_HOST")
     }
 }
