@@ -294,6 +294,10 @@ background-color: #E7E0D7;
 .img-min{
 	max-height: 222px;
 }
+.pc{
+	max-height: 158px;
+}
+
 /*========== 2. NAVIGATION BAR ==============*/
 
 @media (min-width:768px) {
