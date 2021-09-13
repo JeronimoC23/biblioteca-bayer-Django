@@ -23,7 +23,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'jm99k5)6m#bb*0v-$s1e$w2-*seoza5!2q8ek#rq6wdw+7g=38'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False") == "True"
+PROD = os.getenv("PROD", "False")
+if PROD == True:
+    DEBUG = os.getenv("DEBUG", "False") == "True"
+    print("***MODO PRODUCCION ACTIVDO***")
+else:
+    DEBUG = True
+    print("****MODO DEV ACTIVADO***")
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
@@ -52,8 +58,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+if PROD == True:
+    MIDDLEWARE += 'whitenoise.middleware.WhiteNoiseMiddleware'
 
 ROOT_URLCONF = 'DjangoWebProyect.urls'
 
@@ -88,10 +95,17 @@ DATABASES = {
         'NAME': os.getenv("DATABASE_NAME", default='bayer_store'),
         'USER':os.getenv("DATABASE_USER",default='jero'),
         'PASSWORD':os.getenv("DATABASE_PASSWORD",default='localhost'),
-        'PORT':'25060',
+        #'PORT':'25060',
         'HOST': os.getenv("DATABASE_HOST")
     }
 }
+if PROD == True:
+    DATABASES['default'] == {'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.getenv("DATABASE_NAME", default='bayer_store'),
+        'USER':os.getenv("DATABASE_USER",default='jero'),
+        'PASSWORD':os.getenv("DATABASE_PASSWORD",default='localhost'),
+        'PORT':'25060',
+        'HOST': os.getenv("DATABASE_HOST")}
 
 
 # Password validation
@@ -142,5 +156,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
    os.path.join(BASE_DIR, 'mainapp/static'),
 )
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+if PROD == True:
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
