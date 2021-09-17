@@ -7,3 +7,5 @@ sorl.thumbnail
 psycopg2
 dj_database_url
 whitenoise
+django-storages
+boto3
