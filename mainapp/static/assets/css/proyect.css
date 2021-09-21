@@ -357,7 +357,7 @@ background-color: #E7E0D7;
 	background-color: transparent;
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
-	color: #483f34;
+	color: #181511;
 	background-color: #FF1F1F;
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
@@ -467,7 +467,7 @@ top: 25%;
 	background-size:cover;
 }
 .slide-three {
-	background:url(../images/biblioteca.jpg) no-repeat;
+	background:url(../images/feriadelslider.jpeg) no-repeat;
 	background-size:cover;
 }
 

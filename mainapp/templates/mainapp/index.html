@@ -41,10 +41,10 @@
 
 <div class="highlight-bg has-margin-bottom">
   <div class="container event-cta">
-    <div class="ec-txt"> <span>NUESTROS LIBROS Y DISPONIBILIDADES</span>
+    <div class="ec-txt"> <span>NUESTROS LIBROS</span>
       <p class="mons-font">CATÁLOGO VIRTUAL</p>
     </div>
-    <a class="btn btn-lg btn-primary" href="http://3169.bepe.ar/cgi-bin/koha/opac-search.pl?q=" role="button" target="_blank">INGRESA AQUÍ →</a> </div>
+    <a class="btn btn-lg btn-primary" href="http://3169.bepe.ar/cgi-bin/koha/opac-search.pl?q=" role="button" target="_blank">INGRESÁ AQUÍ →</a> </div>
 </div>
 
 <!-- // CATALOG --> 
@@ -176,7 +176,7 @@
           {% endthumbnail %}
           {% comment %} <img class="img-responsive center-block img-sub" src="{{subcomision.image.url}}" alt="subcomision"> {% endcomment %}
           <h5>{{subcomision.name}}</h5>
-          <p>{{subcomision.description|truncatechars:250|safe}}</p>
+          <p>{{subcomision.description|truncatechars:70|safe}}</p>
           <p><a href="{%url 'subcomision' subcomision.id %}"  role="button">MAS INFO →</a></p>
         </div>
       {%endfor%}
