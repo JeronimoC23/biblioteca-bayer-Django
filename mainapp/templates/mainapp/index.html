@@ -176,8 +176,8 @@
           {% endthumbnail %}
           {% comment %} <img class="img-responsive center-block img-sub" src="{{subcomision.image.url}}" alt="subcomision"> {% endcomment %}
           <h5>{{subcomision.name}}</h5>
-          <p>{{subcomision.description|truncatechars:70|safe}}</p>
-          <p><a href="{%url 'subcomision' subcomision.id %}"  role="button">MAS INFO →</a></p>
+          <p>{{subcomision.description|truncatechars_html:70|safe}}</p>
+          <p><a href="{%url 'subcomision' subcomision.id %}"  role="button">MÁS INFO →</a></p>
         </div>
       {%endfor%}
     </div>
@@ -212,7 +212,7 @@
 <!--OUR GALLERY-->
 <div class="container has-margin-bottom" id="gallery">
   <div class="section-title">
-    <h4> GALERIA </h4>
+    <h4> GALERÍA </h4>
   </div>
   <div class="img-gallery row">
     <div class="col-sm-4 col-md-3"> 

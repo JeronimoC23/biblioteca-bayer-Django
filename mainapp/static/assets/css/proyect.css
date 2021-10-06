@@ -58,6 +58,10 @@ a:hover, a:focus {
 	color:#E95D00;
 	text-decoration:none;
 }
+div {
+	text-align: justify;
+	text-justify: inter-word;
+  }
 .link-reverse {
 	color:#E95D00;
 }
