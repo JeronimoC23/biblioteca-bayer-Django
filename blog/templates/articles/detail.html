@@ -24,12 +24,11 @@
   <div class="row">
     <div class="col-md-12 has-margin-bottom">
       <article class="blog-content">
-      {% comment %} <img src="{{article.image.url}}" alt="imagen-articulo" class="img-responsive has-margin-xs-bottom"> {% endcomment %}
-      {% thumbnail article.image "1500x800" crop="center" as im %} 
-        <img class="img-responsive center-block img-sub" src="{{im.url}}" alt="bulletin blog" class="img-responsive has-margin-xs-bottom"> 
-      {% endthumbnail %}
+      <div class="pull-left col-sm-12 col-md-6">
+        <img src="{{article.image.url}}" class="img-responsive has-margin-xs-bottom subcomimage" alt="subcomision">
+      </div>
+      <p>{{article.content | safe}}</p>
       </br>
-      <p>{{article.content | safe}}</p>  
       </article>
     </div>
     <div class="col-md-12 has-margin-bottom">

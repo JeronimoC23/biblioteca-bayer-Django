@@ -19,8 +19,11 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 has-margin-bottom">
-      <article class="blog-content"><img src="{{event.image.url}}" alt="imagen-evento" class="img-responsive has-margin-xs-bottom">
-      {{event.content | safe}}  
+      <article class="blog-content">
+        <div class="pull-left col-sm-12 col-md-6">
+          <img src="{{event.image.url}}" alt="imagen-evento" class="img-responsive has-margin-xs-bottom">
+        </div>
+        <p>{{event.content | safe}}  </p>
       </article>
       <div title="Add to Calendar" class="addeventatc">
     Agregar al calendario
